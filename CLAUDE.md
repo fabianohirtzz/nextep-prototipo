@@ -56,7 +56,9 @@ pt-BR, sem travessões, sem emojis, números concretos, botões dizem a ação.
 - 2026-11-17: v1 completa (5 páginas + `public/auditoria.html`), QA de navegador feito e corrigido
   (overflow no contato, reset de ol, X do modal, lightbox por teclado, "Ver mais" na galeria, contraste do laranja:
   botões `--laranja-btn #BF560B`, texto laranja `--laranja-forte #A84A08`).
-- Commit local feito na `main`. Deploy previsto: repo público `fabianohirtzz/nextep-prototipo` + GitHub Pages via
-  `.github/workflows/pages.yml` (publica `public/`). A criação do repo foi bloqueada pela permissão automática; aguarda o Fabiano.
+- 2026-11-17: publicado. Repo público https://github.com/fabianohirtzz/nextep-prototipo , GitHub Pages via
+  `.github/workflows/pages.yml` (publica `public/` a cada push na `main`).
+  Site: https://fabianohirtzz.github.io/nextep-prototipo/ . Auditoria: .../auditoria.html
+- Próximo: Fabiano envia ao dono da Nextep; ajustes conforme retorno.
 - Auditoria: medições de 2026-11-17 (TTFB 2 a 5 s com pico de 78 s, HTML 613 KB, 15 imagens base64, 25 CSS + 17 JS, sem H1/description/OG).
 - 3CX dá erro de CORS em localhost; testar no domínio publicado (pode exigir liberar o domínio no 3CX).
