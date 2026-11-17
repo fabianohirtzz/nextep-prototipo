@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diagnóstico do site atual | Nextep Soluções em TI</title>
+<meta name="description" content="Diagnóstico do site nextepsolucoes.com.br: desempenho, conteúdo, SEO e conversão, com o que o novo site resolve.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Diagnóstico do site atual da Nextep">
+<meta property="og:description" content="O que o site atual mostra hoje, o que ele deixa de mostrar e o que o novo site resolve.">
+<meta property="og:image" content="assets/img/og.jpg">
+<link rel="icon" type="image/png" href="assets/img/logo/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+  .aud-topo { background: var(--navy-deep); color: var(--claro-sobre-navy); padding: 28px 0 clamp(56px, 8vw, 104px); }
+  .aud-topo__barra { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: clamp(48px, 7vw, 88px); font-size: 15px; }
+  .aud-topo__barra img { width: 120px; }
+  .aud-topo h1 { color: #fff; max-width: 16ch; }
+  .aud-topo .lead { color: var(--claro-sobre-navy); margin-top: 24px; }
+  .aud-meta { display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 32px; font-size: 15px; }
+  .aud-meta b { color: #fff; font-weight: 650; }
+
+  .comparo { width: 100%; border-collapse: collapse; font-size: 16px; }
+  .comparo th, .comparo td { text-align: left; padding: 16px 12px; border-bottom: 1px solid var(--linha); vertical-align: top; }
+  .comparo thead th { font-size: 14px; color: var(--mudo); font-weight: 650; border-bottom: 2px solid var(--tinta); }
+  .comparo td:first-child { color: var(--tinta); font-weight: 600; width: 34%; }
+  .comparo td:nth-child(2) { color: #A3301A; }
+  .comparo td:nth-child(3) { color: #17663A; font-weight: 600; }
+  .tabela-rola { overflow-x: auto; }
+
+  .achado { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(32px, 5vw, 72px); align-items: start; padding: clamp(48px, 6vw, 80px) 0; border-top: 1px solid var(--linha); }
+  .achado__txt { display: grid; gap: 18px; }
+  .achado__txt h3 { font-size: clamp(24px, 2.4vw, 32px); }
+  .achado__txt h4 { font-size: 15px; color: var(--mudo); font-weight: 650; letter-spacing: 0; margin-bottom: -10px; }
+  .achado__img { border-radius: var(--raio); overflow: hidden; border: 1px solid var(--linha); box-shadow: var(--sombra); }
+  .achado__img figcaption { font-size: 14px; color: var(--mudo); padding: 12px 16px; background: #fff; border-top: 1px solid var(--linha); }
+  .grau { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; padding: 4px 12px; border-radius: 999px; justify-self: start; }
+  .grau--critico { background: #FBE4DF; color: #A3301A; }
+  .grau--atencao { background: #FFF1D6; color: #7A4B00; }
+  .grau--ok { background: #E3F4EA; color: #17663A; }
+  .resolve { background: var(--fundo); border-radius: var(--raio-p); padding: 18px 20px; border-left: 4px solid var(--laranja); }
+  .resolve b { color: var(--tinta); }
+
+  .lista-num { display: grid; gap: 14px; counter-reset: n; }
+  .lista-num li { display: grid; grid-template-columns: 36px 1fr; gap: 14px; align-items: start; }
+  .lista-num li::before { counter-increment: n; content: counter(n); width: 36px; height: 36px; border-radius: 50%; background: var(--laranja-suave); color: var(--laranja-forte); font-weight: 750; display: grid; place-items: center; }
+  .sec--navy .lista-num li { color: #E4E9F5; }
+
+  .antes-depois { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .antes-depois figure { display: grid; gap: 10px; }
+  .antes-depois img { border-radius: var(--raio-p); border: 1px solid var(--linha-escura); }
+  .antes-depois figcaption { font-size: 15px; color: var(--claro-sobre-navy); }
+  .antes-depois figcaption b { color: #fff; }
+
+  @media (max-width: 900px) {
+    .achado, .antes-depois { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media print {
+    .aud-topo, .sec--navy { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .achado { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<header class="aud-topo">
+  <div class="wrap">
+    <div class="aud-topo__barra">
+      <img src="assets/img/logo/logo-branco.png" alt="Nextep Soluções em TI" width="120" height="56">
+      <a class="btn btn--linha-clara" href="index.html">Ver o novo site</a>
+    </div>
+    <h1 class="t-xl">O site atual não mostra o tamanho que a Nextep tem hoje.</h1>
+    <p class="lead">Um diagnóstico do nextepsolucoes.com.br: o que funciona, o que trava e o que um site novo resolve. Tudo aqui foi medido ou fotografado na própria página, em novembro de 2026.</p>
+    <div class="aud-meta">
+      <span>Site analisado <b>nextepsolucoes.com.br</b></span>
+      <span>Data <b>17 de novembro de 2026</b></span>
+      <span>Preparado por <b>Freela In Home</b></span>
+    </div>
+  </div>
+</header>
+
+<main id="conteudo">
+<section class="sec">
+  <div class="wrap duas">
+    <div class="pilha">
+      <h2 class="t-l">Em resumo</h2>
+      <p class="lead">A Nextep tem 15 anos, mais de 5.000 dispositivos gerenciados, 100 mil chamados atendidos e um Instagram com mais de 500 posts de obras reais. O site mostra uma página só, com seis títulos de serviço sem explicação e nenhuma foto de projeto.</p>
+      <p>Quem chega pelo Google ou por uma indicação não encontra o case da Juntapel, as inaugurações de supermercados nem o depoimento de cliente que já existe em vídeo. E o servidor demora segundos para responder, o que derruba a primeira impressão e o ranqueamento.</p>
+    </div>
+    <div class="tabela-rola">
+      <table class="comparo">
+        <thead><tr><th scope="col">Ponto</th><th scope="col">Site atual</th><th scope="col">Novo site</th></tr></thead>
+        <tbody>
+          <tr><td>Resposta do servidor</td><td>2 a 5 s, com pico medido de 78 s</td><td>Arquivos estáticos em CDN</td></tr>
+          <tr><td>Peso do HTML da home</td><td>613 KB</td><td>27 KB</td></tr>
+          <tr><td>Arquivos de estilo e script</td><td>25 CSS e 17 JS</td><td>1 CSS e 1 JS</td></tr>
+          <tr><td>Imagens embutidas no código</td><td>15 em base64</td><td>Nenhuma, todas em WebP</td></tr>
+          <tr><td>Páginas</td><td>1</td><td>5</td></tr>
+          <tr><td>Fotos de projetos reais</td><td>0</td><td>86 fotos e 10 vídeos</td></tr>
+          <tr><td>Cases e depoimentos</td><td>Nenhum</td><td>Juntapel completo, com vídeo</td></tr>
+          <tr><td>Título principal (H1)</td><td>Não tem</td><td>Um por página</td></tr>
+          <tr><td>Descrição para o Google</td><td>Não tem</td><td>Uma por página</td></tr>
+          <tr><td>Prévia no WhatsApp e LinkedIn</td><td>Sem imagem e sem texto</td><td>Imagem e descrição</td></tr>
+          <tr><td>Menu de navegação</td><td>Não tem</td><td>Fixo, com área do cliente</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--fundo sec--colado" style="padding-top: var(--sec);">
+  <div class="wrap">
+    <div class="cab">
+      <h2 class="t-l">O que encontramos</h2>
+      <p class="lead">Cada ponto traz o que vimos, por que importa para o comercial e como o novo site resolve.</p>
+    </div>
+
+    <article class="achado">
+      <div class="achado__txt">
+        <span class="grau grau--critico">Crítico</span>
+        <h3>O servidor demora para responder</h3>
+        <h4>O que vimos</h4>
+        <p>Em quatro medições seguidas, a primeira resposta do servidor levou entre 2 e 5 segundos. Em uma delas, 78 segundos. O ideal é abaixo de 0,8 s. O HTML da página inicial pesa 613 KB porque carrega 15 imagens embutidas no próprio código, além de 25 arquivos de estilo e 17 de script do construtor de páginas.</p>
+        <h4>Por que importa</h4>
+        <p>Segundo dados do próprio Google, 53% das visitas pelo celular são abandonadas quando a página leva mais de 3 segundos para carregar, e o Google usa a velocidade como critério de posição. Para uma empresa que vende estabilidade e desempenho de TI, um site lento passa a mensagem contrária.</p>
+        <div class="resolve"><b>No novo site:</b> páginas estáticas servidas por CDN, HTML de 27 KB, imagens em WebP com carregamento sob demanda e só um arquivo de estilo e um de script.</div>
+      </div>
+      <figure class="achado__img"><img src="assets/img/auditoria/atual-hero.webp" alt="Topo do site atual da Nextep" loading="lazy" width="1440" height="723"><figcaption>Topo do site atual. Não tem menu nem botão de contato, e o logo aparece como imagem decorativa no lugar de uma chamada.</figcaption></figure>
+    </article>
+
+    <article class="achado">
+      <div class="achado__txt">
+        <span class="grau grau--critico">Crítico</span>
+        <h3>A faixa de números está quebrada e desatualizada</h3>
+        <h4>O que vimos</h4>
+        <p>Em tela de 1440 px, a faixa de números passa da largura da página: o primeiro e o último número aparecem cortados. O SLA aparece como “%98” em vez de “98%”. E os números são de outra fase da empresa: o site fala em 1.500 estações e 100 projetos, enquanto o Instagram já comunica mais de 5.000 dispositivos e 100 mil chamados.</p>
+        <h4>Por que importa</h4>
+        <p>Números são a prova mais rápida de porte. Cortados e menores do que a realidade, eles diminuem a empresa aos olhos de quem está comparando fornecedores.</p>
+        <div class="resolve"><b>No novo site:</b> faixa de números atualizada (15 anos, 100 mil chamados, 5.000 dispositivos, 98% no SLA, 4 estados), legível em qualquer tela.</div>
+      </div>
+      <figure class="achado__img"><img src="assets/img/auditoria/atual-numeros.webp" alt="Faixa de números do site atual cortada nas laterais" loading="lazy" width="864" height="434"><figcaption>Os números das pontas ficam cortados e o SLA aparece como “%98”.</figcaption></figure>
+    </article>
+
+    <article class="achado">
+      <div class="achado__txt">
+        <span class="grau grau--critico">Crítico</span>
+        <h3>Os serviços não são explicados</h3>
+        <h4>O que vimos</h4>
+        <p>“O que oferecemos” mostra seis cartões com ícone e título, sem nenhuma frase sobre o que está incluído, para quem serve ou como funciona. Os cartões não levam a lugar nenhum.</p>
+        <h4>Por que importa</h4>
+        <p>O decisor que pesquisa “terceirização de TI” ou “cabeamento estruturado” precisa entender em segundos se a Nextep faz o que ele procura. Sem texto, o Google também não tem o que indexar.</p>
+        <div class="resolve"><b>No novo site:</b> uma página de Soluções com as seis frentes explicadas, o que está incluído em cada uma e uma seção só para supermercados.</div>
+      </div>
+      <figure class="achado__img"><img src="assets/img/auditoria/atual-servicos.webp" alt="Cartões de serviços do site atual, só com ícone e título" loading="lazy" width="864" height="434"><figcaption>Seis serviços, nenhuma descrição.</figcaption></figure>
+    </article>
+
+    <article class="achado">
+      <div class="achado__txt">
+        <span class="grau grau--critico">Crítico</span>
+        <h3>O melhor conteúdo da Nextep está fora do site</h3>
+        <h4>O que vimos</h4>
+        <p>O Instagram tem mais de 500 posts com racks montados, obras acompanhadas do início ao fim, inaugurações de supermercados e o depoimento em vídeo do gerente comercial da Juntapel. No site não há nenhuma foto de projeto, nenhum case e nenhum depoimento.</p>
+        <h4>Por que importa</h4>
+        <p>Em serviço de TI, o cliente compra confiança. Fotos reais de trabalho organizado e a fala de quem já contratou convencem mais do que qualquer frase de efeito.</p>
+        <div class="resolve"><b>No novo site:</b> galeria com 86 fotos reais filtráveis, 10 vídeos do Instagram tocando dentro do site, o case Juntapel com números e linha do tempo e o depoimento “15 minutos, alguém já te chama.”</div>
+      </div>
+      <figure class="achado__img"><img src="assets/img/auditoria/novo-hero.webp" alt="Topo do novo site com mural de fotos reais" loading="lazy" width="1440" height="723"><figcaption>Novo site: as fotos do Instagram viram o primeiro argumento da página.</figcaption></figure>
+    </article>
+
+    <article class="achado">
+      <div class="achado__txt">
+        <span class="grau grau--atencao">Atenção</span>
+        <h3>O Google e o WhatsApp não sabem do que o site trata</h3>
+        <h4>O que vimos</h4>
+        <p>A página não tem título principal (H1), não tem descrição para os resultados de busca, não tem dados de compartilhamento (Open Graph) nem dados estruturados de empresa local. Três imagens estão sem texto alternativo. Com uma página só, o site disputa apenas o próprio nome da empresa.</p>
+        <h4>Por que importa</h4>
+        <p>Quando alguém manda o link no WhatsApp ou no LinkedIn, a prévia sai sem imagem e sem descrição. E buscas como “TI para supermercados” ou “cabeamento estruturado Porto Alegre” não têm uma página para encontrar.</p>
+        <div class="resolve"><b>No novo site:</b> cinco páginas com título e descrição próprios, prévia com imagem nas redes, dados estruturados com endereço e telefone e textos alternativos em todas as fotos.</div>
+      </div>
+      <figure class="achado__img"><img src="assets/img/auditoria/atual-faq.webp" alt="FAQ do site atual com perguntas genéricas" loading="lazy" width="864" height="434"><figcaption>O FAQ fala de criptografia e ameaças em geral, e não das dúvidas de quem está contratando.</figcaption></figure>
+    </article>
+
+    <article class="achado">
+      <div class="achado__txt">
+        <span class="grau grau--atencao">Atenção</span>
+        <h3>O formulário não qualifica o contato</h3>
+        <h4>O que vimos</h4>
+        <p>O formulário pede só nome, e-mail e WhatsApp, e fica no fim da página, sem botão de acesso no topo. O comercial recebe o contato sem saber o nome da empresa, o porte ou o assunto.</p>
+        <h4>Por que importa</h4>
+        <p>Cada contato sem contexto vira uma ligação a mais só para entender se vale uma proposta.</p>
+        <div class="resolve"><b>No novo site:</b> botão “Agendar consultoria” sempre visível no menu, formulário com empresa, número de computadores e assunto, e página de contato com todos os canais.</div>
+      </div>
+      <figure class="achado__img"><img src="assets/img/auditoria/atual-form.webp" alt="Formulário do site atual com três campos" loading="lazy" width="864" height="434"><figcaption>Três campos, sem empresa nem porte.</figcaption></figure>
+    </article>
+
+    <article class="achado">
+      <div class="achado__txt">
+        <span class="grau grau--ok">Manter</span>
+        <h3>O que já funciona bem</h3>
+        <ul class="lista-check">
+          <li>O chat da central 3CX no canto da tela, ligado ao atendimento real. Ele continua no novo site.</li>
+          <li>A oferta de consultoria gratuita, que segue como principal chamada.</li>
+          <li>O link para a área do cliente, que ganha lugar fixo no menu.</li>
+          <li>O azul e o laranja da marca, agora com tons ajustados para leitura e contraste.</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="sec sec--navy">
+  <div class="wrap">
+    <div class="cab"><h2 class="t-l">Antes e depois</h2></div>
+    <div class="antes-depois">
+      <figure><img src="assets/img/auditoria/atual-hero.webp" alt="Topo do site atual" loading="lazy" width="1440" height="723"><figcaption><b>Hoje.</b> Frase genérica, sem menu, sem chamada e sem prova.</figcaption></figure>
+      <figure><img src="assets/img/auditoria/novo-hero.webp" alt="Topo do novo site" loading="lazy" width="1440" height="723"><figcaption><b>Proposta.</b> O que a Nextep faz, trabalho real em movimento e o depoimento de um cliente a um clique.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap duas">
+    <div class="pilha">
+      <h2 class="t-l">Para colocar no ar</h2>
+      <p class="lead">O protótipo já tem as cinco páginas, as fotos, os vídeos e os textos. Para virar o site oficial, faltam poucos passos.</p>
+      <div class="acoes"><a class="btn btn--laranja" href="index.html">Navegar pelo protótipo</a></div>
+    </div>
+    <ol class="lista-num">
+      <li>Revisar os textos e os números com a equipe da Nextep, e confirmar a lista de clientes exibida.</li>
+      <li>Ligar o formulário ao e-mail comercial ou ao CRM e incluir o WhatsApp comercial.</li>
+      <li>Liberar o novo domínio no 3CX para o chat conectar direto.</li>
+      <li>Publicar no domínio nextepsolucoes.com.br com redirecionamento das URLs antigas.</li>
+      <li>Configurar Google Search Console, Analytics e o perfil da empresa no Google.</li>
+    </ol>
+  </div>
+</section>
+</main>
+
+<footer class="rodape" style="padding-top: 48px;">
+  <div class="wrap rodape__base" style="border-top: 0; padding-bottom: 48px;">
+    <p>Diagnóstico preparado pela Freela In Home para a Nextep Soluções em TI.</p>
+    <p>Documento não indexado.</p>
+  </div>
+</footer>
+</body>
+</html>
