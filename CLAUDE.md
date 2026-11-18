@@ -46,11 +46,12 @@ HTML/CSS/JS estático. Páginas em `src/pages/*.html` com partials em `src/parti
 
 ## Comandos
 - Build: `python build.py`
-- Local: `python -m http.server 8080 -d public`
-- Deploy: Vercel (pasta `public`), sempre `noindex` enquanto for proposta.
+- Local: `python serve.py` (porta 8080; entrega `/sobre` como `sobre.html`, igual ao GitHub Pages)
+- Deploy: GitHub Pages (pasta `public`), sempre `noindex` enquanto for proposta.
 
 ## Regras do projeto
 pt-BR, sem travessões, sem emojis, números concretos, botões dizem a ação.
+Links internos sem `.html` (pedido do Fabiano): `sobre`, `contato#consultoria`, home = `./`. Os arquivos continuam `.html`.
 
 ## Estado atual
 - 2026-11-17: v1 completa (5 páginas + `public/auditoria.html`), QA de navegador feito e corrigido

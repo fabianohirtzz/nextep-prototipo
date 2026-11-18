@@ -97,7 +97,7 @@ def render(name: str) -> str:
     html = html.replace("{{title}}", meta["title"]).replace("{{description}}", meta["description"])
     html = html.replace("{{v}}", VERSAO)
     html = html.replace("{{page}}", meta.get("active", name))
-    html = html.replace("{{path}}", "" if name == "index" else name + ".html")
+    html = html.replace("{{path}}", "" if name == "index" else name)
     return html
 
 
