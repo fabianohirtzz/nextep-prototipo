@@ -18,9 +18,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/site.css?v=1794961747">
+<link rel="stylesheet" href="assets/css/site.css?v=1795003309">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Nextep Soluções em TI","url":"https://nextepsolucoes.com.br/","telephone":"+55 51 3103-9943","email":"comercial@nextepsolucoes.com.br","foundingDate":"2011-11-11","address":{"@type":"PostalAddress","streetAddress":"Av. Saturnino de Brito, 30, Sala 401","addressLocality":"Porto Alegre","addressRegion":"RS","addressCountry":"BR"},"sameAs":["https://www.instagram.com/nextepsolucoes/","https://www.linkedin.com/company/nextepsolucoes/"]}</script>
-<script src="assets/js/site.js?v=1794961747" defer></script>
+<script src="assets/js/site.js?v=1795003309" defer></script>
 
 </head>
 <body data-page="solucoes">
@@ -32,6 +32,7 @@
     </a>
     <nav class="menu" id="menu" aria-label="Principal">
       <ul class="menu__lista" data-menu-lista>
+        <li><a href="index.html">Início</a></li>
         <li><a href="solucoes.html" aria-current="page">Soluções</a></li>
         <li><a href="projetos.html">Projetos</a></li>
         <li><a href="sobre.html">Sobre</a></li>
@@ -40,10 +41,10 @@
       </ul>
       <div class="menu__acoes">
         <a class="menu__cliente" href="https://nextep.suport.cloud/" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 13a8 8 0 0116 0v4a2 2 0 01-2 2h-2v-6h4M4 13v4a2 2 0 002 2h2v-6H4" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
-          Área do cliente
+          <i aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 13a8 8 0 0116 0v4a2 2 0 01-2 2h-2v-6h4M4 13v4a2 2 0 002 2h2v-6H4" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></i>
+          <span><small>Já é cliente?</small>Área do cliente</span>
+          <b class="menu__online" aria-hidden="true"></b>
         </a>
-        <a class="btn btn--laranja" href="contato.html#consultoria">Agendar consultoria</a>
       </div>
       <div class="menu__rodape">
         <a href="tel:+555131039943">(51) 3103-9943</a>
@@ -57,17 +58,22 @@
 </header>
 
 <main id="conteudo">
-<section class="pagetopo">
-  <div class="wrap">
-    <div class="pagetopo__in">
+<section class="hero hero--interno">
+  <div class="wrap hero__grid">
+    <div class="hero__texto">
+      <p class="hero__selo"><b>Gestão completa</b> ou um projeto pontual</p>
       <h1 class="t-xl">Tudo o que a TI da sua empresa precisa, com uma equipe só.</h1>
       <p class="lead">Seis frentes que funcionam juntas. Você pode contratar uma delas para um projeto pontual ou deixar a TI inteira com a Nextep.</p>
+      <div class="acoes"><a class="btn btn--laranja" href="contato.html#consultoria">Agendar consultoria gratuita</a><a class="btn btn--linha" href="#varejo">Ver a solução para varejo</a></div>
     </div>
-    <div class="faixa-fotos">
-      <img src="assets/img/ig/infra-148.webp" alt="Rack de piso montado pela Nextep" width="1080" height="1161">
-      <img src="assets/img/ig/campo-104.webp" alt="Técnico configurando switch" width="1080" height="1161">
+    <div class="mosaico" aria-label="Fotos da Nextep em serviço" data-mosaico>
+      <img src="assets/img/ig/infra-063.webp" alt="Rack com cabeamento estruturado identificado" width="1080" height="1161">
       <img src="assets/img/ig/equipe-115.webp" alt="Analista monitorando chamados" width="1080" height="1161">
+      <img src="assets/img/ig/campo-104.webp" alt="Técnico configurando switch" width="1080" height="1161">
+      <img src="assets/img/ig/infra-030.webp" alt="Switch gerenciável com cabos conectados" width="1080" height="1161">
       <img src="assets/img/ig/equipe-069.webp" alt="Reunião de projeto da equipe" width="1080" height="1161">
+      <img src="assets/img/ig/campo-052.webp" alt="Access point Wi-Fi corporativo instalado no teto" width="1080" height="1161">
+      <span class="mosaico__no" aria-hidden="true"></span><span class="mosaico__no" aria-hidden="true"></span>
     </div>
   </div>
 </section>
@@ -182,6 +188,7 @@
 </div>
 
 <section class="sec sec--navy" id="varejo">
+  <canvas class="rede" data-rede aria-hidden="true"></canvas>
   <div class="wrap varejo">
     <div class="pilha">
       <h2 class="t-l">TI para supermercados, do rack ao caixa.</h2>
@@ -241,6 +248,7 @@
 
 </main>
 <footer class="rodape" data-rodape>
+  <canvas class="rede" data-rede aria-hidden="true"></canvas>
   <div class="wrap">
     <div class="rodape__cta">
       <h2 class="rodape__frase">Sua TI no lugar.<br><span>Você cuidando do negócio.</span></h2>
@@ -274,6 +282,7 @@
           <li><a href="projetos.html">Projetos</a></li>
           <li><a href="sobre.html">Sobre a Nextep</a></li>
           <li><a href="contato.html">Contato</a></li>
+          <li><a href="sobre.html#trabalhe" data-vagas>Trabalhe conosco</a></li>
         </ul>
       </div>
       <div>
@@ -294,13 +303,55 @@
 
   <div class="wrap rodape__base">
     <p>Nextep Soluções em TI, desde 2011. Protótipo de proposta, não indexado.</p>
-    <a class="rodape__assina" href="https://www.freelainhome.com.br/" target="_blank" rel="noopener">
-      <span>Site por</span>
-      <img src="assets/img/logo/freela-in-home.png" alt="Freela In Home" width="196" height="24" loading="lazy">
+    <a class="assina" href="https://www.freelainhome.com.br/" target="_blank" rel="noopener" data-assina>
+      <svg class="assina__cabo" viewBox="0 0 120 28" width="120" height="28" aria-hidden="true">
+        <path class="assina__fio" d="M2 14 H38 C50 14 50 6 62 6 H84" pathLength="100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path class="assina__pulso" d="M2 14 H38 C50 14 50 6 62 6 H84" fill="none" stroke-width="2.4" stroke-linecap="round" pathLength="100"/>
+        <g class="assina__plug"><rect x="78" y="1" width="16" height="10" rx="2"/><rect x="94" y="3" width="4" height="6" rx="1"/></g>
+        <g class="assina__porta"><rect x="100" y="0" width="19" height="14" rx="2.5"/><rect class="assina__led" x="104" y="18" width="11" height="4" rx="2"/></g>
+      </svg>
+      <span>Soluções conectadas por <b>Freela In Home</b></span>
     </a>
   </div>
   <div class="rodape__gigante" aria-hidden="true"><img src="assets/img/logo/wordmark-branco.png" alt="" width="640" height="197" loading="lazy"></div>
 </footer>
+
+<div class="vagasbox" data-vagasbox hidden>
+  <div class="vagasbox__fundo" data-vagas-fechar></div>
+  <div class="vagasbox__caixa" role="dialog" aria-modal="true" aria-labelledby="vagas-tit">
+    <button class="vagasbox__x" type="button" data-vagas-fechar aria-label="Fechar formulário">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <div class="vagasbox__topo">
+      <h2 id="vagas-tit">Trabalhe na Nextep</h2>
+      <p>Técnicos de campo, analistas de suporte, redes e infraestrutura. Envie seu currículo e ele fica no nosso banco de talentos para as próximas vagas.</p>
+    </div>
+    <form class="form form--vagas" data-form data-ok="Currículo recebido. Se o seu perfil combinar com uma vaga aberta, o time da Nextep entra em contato." novalidate>
+      <div class="campo"><label for="v-nome">Nome completo</label><input id="v-nome" name="nome" autocomplete="name" required></div>
+      <div class="campo"><label for="v-email">E-mail</label><input id="v-email" name="email" type="email" autocomplete="email" required></div>
+      <div class="campo"><label for="v-fone">WhatsApp</label><input id="v-fone" name="whatsapp" type="tel" autocomplete="tel" inputmode="tel" pattern="\(\d{2}\) \d{4,5}-\d{4}" title="Número com DDD, por exemplo (51) 99999-9999" required></div>
+      <div class="campo"><label for="v-area">Área de interesse</label>
+        <select id="v-area" name="area" required>
+          <option value="">Selecione</option><option>Suporte técnico e help desk</option><option>Infraestrutura e campo</option><option>Redes e segurança</option><option>Comercial</option><option>Administrativo</option>
+        </select></div>
+      <div class="campo campo--cheio"><label for="v-linkedin">LinkedIn <span>(opcional)</span></label><input id="v-linkedin" name="linkedin" type="url" placeholder="https://www.linkedin.com/in/seu-perfil"></div>
+      <div class="campo campo--cheio arquivo" data-arquivo>
+        <span class="arquivo__rot" id="v-cv-rot">Currículo</span>
+        <label class="arquivo__zona" for="v-cv">
+          <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M12 16V4m0 0l-5 5m5-5l5 5M4 16v3a1 1 0 001 1h14a1 1 0 001-1v-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span data-arquivo-txt><b>Escolher arquivo</b> ou arraste aqui. PDF ou Word, até 5 MB.</span>
+        </label>
+        <input id="v-cv" name="curriculo" type="file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" aria-labelledby="v-cv-rot" required>
+      </div>
+      <div class="campo campo--cheio"><label for="v-msg">Conte um pouco sobre você <span>(opcional)</span></label><textarea id="v-msg" name="mensagem" rows="3"></textarea></div>
+      <div class="form__rodape">
+        <label class="aceite"><input type="checkbox" name="aceite" required> Autorizo a Nextep a guardar meus dados para processos seletivos.</label>
+        <button class="btn btn--laranja" type="submit">Enviar currículo</button>
+      </div>
+      <p class="form__ok" role="status"></p>
+    </form>
+  </div>
+</div>
 
 <div class="reelbox" data-reelbox hidden>
   <div class="reelbox__fundo" data-reel-fechar></div>

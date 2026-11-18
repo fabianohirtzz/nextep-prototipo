@@ -6,19 +6,11 @@ active: home
 <section class="hero">
   <div class="wrap hero__grid">
     <div class="hero__texto">
-      <p class="hero__selo"><b>15 anos</b> cuidando da TI de empresas desde 2011</p>
       <h1 class="t-xl">A TI que ninguém vê e que mantém sua empresa funcionando.</h1>
       <p class="lead">Redes, servidores, cloud, segurança e suporte. A Nextep projeta, implanta e administra a infraestrutura de tecnologia da sua empresa, para você cuidar só do seu negócio.</p>
       <div class="acoes">
         <a class="btn btn--laranja" href="contato.html#consultoria">Agendar consultoria gratuita</a>
         <a class="btn btn--linha" href="projetos.html">Ver projetos entregues</a>
-      </div>
-      <div class="hero__prova">
-        <button class="btn-play" type="button" data-reel="Df0EhBzBWkr">
-          <i><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></i>
-          Depoimento Juntapel
-        </button>
-        <span><q>15 minutos, alguém já te chama.</q></span>
       </div>
     </div>
     <div class="mural" aria-label="Fotos de projetos da Nextep">
@@ -48,6 +40,7 @@ active: home
 </section>
 
 <section class="numeros" aria-label="A Nextep em números" data-numeros>
+  <canvas class="rede" data-rede aria-hidden="true"></canvas>
   <div class="wrap numeros__grid">
     <div class="numero"><strong><span data-conta="15">15</span><small>anos</small></strong><span>de operação, desde 11 de novembro de 2011</span></div>
     <div class="numero"><strong><span data-conta="100">100</span> mil<small>+</small></strong><span>chamados de suporte atendidos</span></div>
@@ -118,10 +111,12 @@ active: home
 
 <section class="sec sec--fundo">
   <div class="wrap case">
-    <div class="case__fotos">
-      <img src="assets/img/ig/infra-022.webp" alt="Rack da nova sede da Juntapel com patch panels Cat6" loading="lazy" width="1080" height="1161">
-      <img src="assets/img/ig/campo-052.webp" alt="Access point Wi-Fi 6 instalado no teto" loading="lazy" width="1080" height="1161">
-      <img src="assets/img/ig/equipe-080.webp" alt="Equipe da Nextep alinhando o projeto em obra" loading="lazy" width="1080" height="1161">
+    <div class="case__video video" data-video="DfCj1MDJpsc">
+      <img src="assets/img/reels/DfCj1MDJpsc.webp" alt="" width="720" height="1280" loading="lazy">
+      <button class="video__play" type="button" aria-label="Assistir ao vídeo do projeto da Juntapel">
+        <span class="video__btn"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+        <span class="video__txt"><b>Do projeto à inauguração</b>Dez meses de obra, do estudo à inauguração</span>
+      </button>
     </div>
     <div class="case__texto">
       <p class="hero__selo"><b>Case</b> Nova sede da Juntapel, inaugurada em outubro de 2026</p>
@@ -143,7 +138,7 @@ active: home
           </button>
         </figcaption>
       </figure>
-      <a class="link-seta" href="projetos.html#juntapel">Ver o projeto completo</a>
+      <div class="acoes"><a class="btn btn--navy" href="projetos.html#juntapel">Ver o projeto completo, com fotos</a></div>
     </div>
   </div>
 </section>
@@ -172,6 +167,7 @@ active: home
 </section>
 
 <section class="sec sec--navy">
+  <canvas class="rede" data-rede aria-hidden="true"></canvas>
   <div class="wrap">
     <div class="cab cab--lado">
       <h2 class="t-l">Como um projeto acontece</h2>

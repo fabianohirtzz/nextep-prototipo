@@ -1,10 +1,11 @@
 <header class="topo" data-topo>
   <div class="topo__in wrap">
-    <a class="topo__logo" href="index.html" aria-label="Nextep Soluções em TI, página inicial"{{cur:home}}>
+    <a class="topo__logo" href="index.html" aria-label="Nextep Soluções em TI, página inicial">
       <img src="assets/img/logo/logo-navy.png" alt="Nextep Soluções em TI" width="160" height="74">
     </a>
     <nav class="menu" id="menu" aria-label="Principal">
       <ul class="menu__lista" data-menu-lista>
+        <li><a href="index.html"{{cur:home}}>Início</a></li>
         <li><a href="solucoes.html"{{cur:solucoes}}>Soluções</a></li>
         <li><a href="projetos.html"{{cur:projetos}}>Projetos</a></li>
         <li><a href="sobre.html"{{cur:sobre}}>Sobre</a></li>
@@ -13,10 +14,10 @@
       </ul>
       <div class="menu__acoes">
         <a class="menu__cliente" href="https://nextep.suport.cloud/" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 13a8 8 0 0116 0v4a2 2 0 01-2 2h-2v-6h4M4 13v4a2 2 0 002 2h2v-6H4" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
-          Área do cliente
+          <i aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 13a8 8 0 0116 0v4a2 2 0 01-2 2h-2v-6h4M4 13v4a2 2 0 002 2h2v-6H4" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></i>
+          <span><small>Já é cliente?</small>Área do cliente</span>
+          <b class="menu__online" aria-hidden="true"></b>
         </a>
-        <a class="btn btn--laranja" href="contato.html#consultoria">Agendar consultoria</a>
       </div>
       <div class="menu__rodape">
         <a href="tel:+555131039943">(51) 3103-9943</a>

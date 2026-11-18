@@ -67,6 +67,16 @@ pt-BR, sem travessões, sem emojis, números concretos, botões dizem a ação.
   rodapé com frase grande, ícones sociais, wordmark e assinatura Freela In Home (`logo/freela-in-home.png`),
   com efeito de revelar (`html.cortina`) só quando cabe na tela; heros de Sobre e Projetos no padrão da home;
   trilhas "Início / ..." removidas. CSS v2 fica no fim de `site.css`. Build carimba `?v=` nos links de CSS/JS.
+- 2026-11-18, rodada v3 (pedido do Fabiano): menu com "Início" e sem "Agendar consultoria"; Área do cliente virou
+  pílula navy com LED online (destaque do topo). Hero da home sem selo de 15 anos e sem depoimento. Case Juntapel da
+  home com vídeo (capa + player do IG no lugar, `[data-video]`), fotos só em projetos.html#juntapel.
+  Heros de Soluções/Projetos/Sobre com `.mosaico` (6 fotos em grade irregular, entrada em sequência, profundidade
+  leve com o mouse); o mural deslizante ficou só na home. Fundo `canvas.rede[data-rede]` (trilhas tipo placa com
+  pulsos de luz) em números, processo, varejo (soluções), linha do tempo (sobre) e rodapé; pausa fora da tela e
+  respeita reduced-motion. Rodapé com wordmark inteiro, hover do "Abrir chamado" corrigido e assinatura
+  "Soluções conectadas por Freela In Home" (cabo que pluga numa porta com LED; pisca dados no hover; sem logo).
+  Trabalhe conosco: popup `[data-vagasbox]` (abre por qualquer `[data-vagas]`, com anexo de currículo PDF/Word até
+  5 MB) no rodapé e seção `#trabalhe` no Sobre. CSS v3 no fim de `site.css`.
 - Logos que faltam (sem site ou download bloqueado): Supermercado Industrial (Canoas), Kern, Flesch, Super Ideal.
 - Próximo: Fabiano revisa a v2; depois envia ao dono da Nextep.
 - Auditoria: medições de 2026-11-17 (TTFB 2 a 5 s com pico de 78 s, HTML 613 KB, 15 imagens base64, 25 CSS + 17 JS, sem H1/description/OG).
