@@ -886,3 +886,23 @@ body { padding-top: 80px; }
 @media (prefers-reduced-motion: reduce) {
   .bento__card, .bento__card--foto img { transition: none; }
 }
+
+/* ===== v6: divisores das soluções = cabo com conectores; feixes saem das pontas e se unem no centro ===== */
+.solucao { position: relative; border-top: 0; }
+.cabo { position: absolute; top: -4px; left: 0; right: 0; height: 9px; pointer-events: none; }
+.cabo::before { content: ""; position: absolute; inset: 0; background:
+  radial-gradient(circle, var(--navy) 0 3px, transparent 3.5px) left center / 9px 9px no-repeat,
+  radial-gradient(circle, var(--navy) 0 3px, transparent 3.5px) right center / 9px 9px no-repeat,
+  linear-gradient(var(--linha), var(--linha)) center / calc(100% - 18px) 1px no-repeat; }
+.cabo i { position: absolute; top: 3px; width: 14%; height: 3px; border-radius: 3px; opacity: 0; box-shadow: 0 0 12px rgba(232, 112, 26, .45); animation: 4s cubic-bezier(.5, .05, .4, 1) infinite; }
+.cabo i:nth-child(1) { left: 0; background: linear-gradient(90deg, transparent, var(--laranja) 85%, #FFD2AE); animation-name: cabo-esq; }
+.cabo i:nth-child(2) { right: 0; background: linear-gradient(270deg, transparent, var(--laranja) 85%, #FFD2AE); animation-name: cabo-dir; }
+.cabo i:nth-child(3) { left: 50%; top: 0; width: 9px; height: 9px; margin-left: -4.5px; border-radius: 50%; background: var(--laranja); animation: cabo-centro 4s ease-out infinite; }
+.solucao:nth-child(3) .cabo i { animation-delay: 1.3s; }
+.solucao:nth-child(4) .cabo i { animation-delay: .6s; }
+.solucao:nth-child(5) .cabo i { animation-delay: 1.9s; }
+.solucao:nth-child(6) .cabo i { animation-delay: .9s; }
+@keyframes cabo-esq { 0% { transform: translateX(0); opacity: 0; } 8% { opacity: 1; } 48% { transform: translateX(257%); opacity: 1; } 54%, 100% { transform: translateX(257%); opacity: 0; } }
+@keyframes cabo-dir { 0% { transform: translateX(0); opacity: 0; } 8% { opacity: 1; } 48% { transform: translateX(-257%); opacity: 1; } 54%, 100% { transform: translateX(-257%); opacity: 0; } }
+@keyframes cabo-centro { 0%, 46% { opacity: 0; transform: scale(.4); box-shadow: 0 0 0 0 rgba(232, 112, 26, .5); } 52% { opacity: 1; transform: scale(1); } 75% { opacity: 1; box-shadow: 0 0 0 12px rgba(232, 112, 26, 0); } 100% { opacity: 0; transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) { .cabo i { animation: none; opacity: 0; } }
