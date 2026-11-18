@@ -89,6 +89,10 @@ Links internos sem `.html` (pedido do Fabiano): `sobre`, `contato#consultoria`, 
 - 2026-11-18, v6: divisores entre as soluções (solucoes.html) viraram `.cabo` (linha com conectores navy nas pontas;
   dois feixes laranja saem das pontas, se encontram no centro e acendem um ponto; loop de 4 s com atraso diferente
   por divisor; parado com reduced-motion). Escolha do Fabiano entre 4 variações (opção "B").
+- 2026-11-18, v7: mosaico de serviços com 4 fotos (Gestão e Infra largos; Redes e Segurança estreitos) e 2 navy
+  (Suporte, Conectividade); título em 2 linhas (max-width 15em) com o subtítulo embaixo, também em 2 linhas.
+  Números do case com ícones próprios (`.spec__ic`: tomada RJ45, patch panel, access point, racks em fibra).
+  `.link-seta` (link sublinhado) saiu de todas as páginas: agora é `btn btn--linha`.
 - Pesquisa de clientes (legendas do IG em 2026-11-18): Kern (Ivoti, cliente há 5+ anos), Flesch (Gravataí?),
   Ideal fica em Florianópolis/SC (não RS, 5 lojas), Deltaville abriu loja em Biguaçu/SC, Kawa Bar e Tapas y Besos
   (Cais Embarcadero, POA). Sem site oficial com logo para Kern, Flesch, Ideal, Tapas; Industrial bloqueia (Cloudflare).

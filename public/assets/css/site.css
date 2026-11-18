@@ -906,3 +906,22 @@ body { padding-top: 80px; }
 @keyframes cabo-dir { 0% { transform: translateX(0); opacity: 0; } 8% { opacity: 1; } 48% { transform: translateX(-257%); opacity: 1; } 54%, 100% { transform: translateX(-257%); opacity: 0; } }
 @keyframes cabo-centro { 0%, 46% { opacity: 0; transform: scale(.4); box-shadow: 0 0 0 0 rgba(232, 112, 26, .5); } 52% { opacity: 1; transform: scale(1); } 75% { opacity: 1; box-shadow: 0 0 0 12px rgba(232, 112, 26, 0); } 100% { opacity: 0; transform: scale(1); } }
 @media (prefers-reduced-motion: reduce) { .cabo i { animation: none; opacity: 0; } }
+
+/* ===== v7: serviços com 4 fotos e 2 cards navy; cabeçalho empilhado; ícones nos números do case ===== */
+.sec--servicos { padding-block: clamp(40px, 3.6vw, 46px); }
+.cab--servicos { max-width: none; gap: 12px; }
+.cab--servicos .t-l { max-width: 15em; text-wrap: balance; }
+.cab--servicos .lead { max-width: 94ch; text-wrap: balance; }
+.bento__card--estreito { grid-column: auto; padding: 22px 16px 20px; }
+.bento__card--estreito::before { background: linear-gradient(180deg, rgba(11, 22, 54, .45) 0%, rgba(11, 22, 54, .82) 45%, rgba(11, 22, 54, .95) 100%); }
+.bento__card--estreito h3 { font-size: 19px; }
+.bento__card--estreito .pilulas { margin-top: 6px; }
+.case__specs dt { display: flex; align-items: center; gap: 10px; }
+.spec__ic { flex: none; width: 34px; height: 34px; border-radius: 9px; display: grid; place-items: center; background: var(--laranja-suave); color: var(--laranja-forte); }
+.spec__ic svg { width: 21px; height: 21px; }
+@media (max-width: 600px) {
+  .bento__card--estreito { min-height: 280px; }
+}
+
+/* links que eram sublinhados agora usam o botão de contorno; não esticam no grid */
+.pilha > .btn, .solucao__texto > .btn, .historia__texto > .btn { justify-self: start; align-self: start; }
