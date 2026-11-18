@@ -816,3 +816,40 @@ html.cortina .rodape { position: sticky; bottom: 0; z-index: 0; }
 .video__btn { position: relative; left: auto; top: auto; flex: none; width: 64px; height: 64px; transform: none; }
 .video__play:hover .video__btn, .video__play:focus-visible .video__btn { transform: scale(1.08); }
 .rodape__gigante img { width: min(980px, 100%); }
+
+/* =====================================================================
+   v4: topo fixo sem pular, case compacto, linha do tempo viva, wordmark menor
+   ===================================================================== */
+/* topo fixo: encolher não mexe mais no layout da página */
+.topo { position: fixed; top: 0; left: 0; right: 0; }
+body { padding-top: 80px; }
+@media (max-width: 900px) { body { padding-top: 68px; } }
+
+/* case da home: título em 3 linhas e números mais baixos */
+.case:has(.case__video) .case__texto { gap: 22px; }
+.case:has(.case__video) h2 { font-size: clamp(30px, 2.9vw, 44px); max-width: none; }
+.case:has(.case__video) .case__specs { grid-template-columns: repeat(4, 1fr); }
+.case:has(.case__video) .case__specs div { padding: 16px 14px 16px 0; border-left: 0; }
+.case:has(.case__video) .case__specs div + div { padding-left: 16px; border-left: 1px solid var(--linha); }
+.case:has(.case__video) .case__specs dt { font-size: clamp(24px, 2vw, 30px); }
+.case:has(.case__video) .case__specs dd { font-size: 14px; }
+@media (max-width: 1100px) {
+  .case:has(.case__video) .case__specs { grid-template-columns: 1fr 1fr; }
+  .case:has(.case__video) .case__specs div:nth-child(3) { padding-left: 0; border-left: 0; }
+}
+
+/* linhas do tempo: traço que se preenche e marcos que acendem */
+.linha--viva { position: relative; }
+.linha--viva::after { content: ""; position: absolute; left: -2px; top: 0; width: 2px; height: 100%; background: var(--laranja); transform: scaleY(var(--prog, 0)); transform-origin: top; }
+.linha--viva li { z-index: 1; }
+.linha--viva li::before { border-color: var(--linha); transition: border-color .4s, background .4s, box-shadow .4s; }
+.sec--navy .linha--viva li::before { border-color: rgba(255, 255, 255, .3); }
+.linha--viva li > * { opacity: .4; transition: opacity .5s; }
+.linha--viva li.is-ativo > * { opacity: 1; }
+.linha--viva li.is-ativo::before { border-color: var(--laranja); background: var(--laranja); box-shadow: 0 0 0 5px rgba(232, 112, 26, .2); }
+.sec--navy .linha--viva li.is-ativo::before { box-shadow: 0 0 0 5px var(--navy-deep), 0 0 0 10px rgba(232, 112, 26, .22); }
+@media (prefers-reduced-motion: reduce) { .linha--viva li > * { opacity: 1; } }
+
+/* wordmark do rodapé: no tamanho nativo da imagem, sem estourar */
+.rodape__gigante img { width: min(560px, 100%); opacity: .08; }
+.case:has(.case__video) h2 { text-wrap: balance; }

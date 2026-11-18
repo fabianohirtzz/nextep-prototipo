@@ -77,6 +77,14 @@ pt-BR, sem travessões, sem emojis, números concretos, botões dizem a ação.
   "Soluções conectadas por Freela In Home" (cabo que pluga numa porta com LED; pisca dados no hover; sem logo).
   Trabalhe conosco: popup `[data-vagasbox]` (abre por qualquer `[data-vagas]`, com anexo de currículo PDF/Word até
   5 MB) no rodapé e seção `#trabalhe` no Sobre. CSS v3 no fim de `site.css`.
+- 2026-11-18, v4: topo `position: fixed` (body com padding-top 80/68) e esconder/mostrar só após 60/40 px
+  acumulados (o sticky encolhendo fazia o menu pular); case da home sem a citação do Pedro (fica em Projetos),
+  título equilibrado em 3 linhas, números em 4 colunas; `.linha` (Sobre e Projetos) vira `.linha--viva` com traço
+  preenchido pela rolagem; wordmark do rodapé em até 560 px.
+- Pesquisa de clientes (legendas do IG em 2026-11-18): Kern (Ivoti, cliente há 5+ anos), Flesch (Gravataí?),
+  Ideal fica em Florianópolis/SC (não RS, 5 lojas), Deltaville abriu loja em Biguaçu/SC, Kawa Bar e Tapas y Besos
+  (Cais Embarcadero, POA). Sem site oficial com logo para Kern, Flesch, Ideal, Tapas; Industrial bloqueia (Cloudflare).
+  Kawa Bar tem logo em `_logos-raw/novos/kawa-bar.png` (fundo opaco, não entrou na faixa).
 - Logos que faltam (sem site ou download bloqueado): Supermercado Industrial (Canoas), Kern, Flesch, Super Ideal.
 - Próximo: Fabiano revisa a v2; depois envia ao dono da Nextep.
 - Auditoria: medições de 2026-11-17 (TTFB 2 a 5 s com pico de 78 s, HTML 613 KB, 15 imagens base64, 25 CSS + 17 JS, sem H1/description/OG).

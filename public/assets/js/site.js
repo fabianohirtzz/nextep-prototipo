@@ -157,16 +157,19 @@
 
   const calmo = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* topo: some ao descer, volta ao subir */
-  let ultimoY = scrollY;
+  /* topo: some ao descer, volta ao subir (com folga para não ficar piscando) */
+  let ultimoY = scrollY, acumulado = 0;
   const cuidaTopo = () => {
     if (!topo) return;
-    const y = scrollY;
-    topo.classList.toggle('is-rolado', y > 8);
-    const menuAberto = document.body.classList.contains('is-travado');
-    if (!menuAberto && !calmo) topo.classList.toggle('is-escondido', y > 320 && y > ultimoY + 4);
-    if (y < ultimoY - 4 || y < 320) topo.classList.remove('is-escondido');
+    const y = Math.max(scrollY, 0);
+    const delta = y - ultimoY;
     ultimoY = y;
+    topo.classList.toggle('is-rolado', y > 24);
+    if (document.body.classList.contains('is-travado') || calmo || y < 320) { topo.classList.toggle('is-escondido', false); acumulado = 0; return; }
+    /* soma o deslocamento na mesma direção; troca de direção zera */
+    acumulado = (Math.sign(delta) === Math.sign(acumulado) || acumulado === 0) ? acumulado + delta : delta;
+    if (acumulado > 60) topo.classList.add('is-escondido');
+    else if (acumulado < -40) topo.classList.toggle('is-escondido', false);
   };
   addEventListener('scroll', cuidaTopo, { passive: true });
   topo?.addEventListener('focusin', () => topo.classList.remove('is-escondido'));
@@ -247,6 +250,28 @@
       }
       wrap.style.setProperty('--prog', prog.toFixed(3));
       passos.forEach((p, i) => p.classList.toggle('is-ativo', prog >= (i / passos.length) + .02 || prog === 1));
+    };
+    addEventListener('scroll', atualiza, { passive: true });
+    addEventListener('resize', atualiza);
+    atualiza();
+  });
+
+  /* linhas do tempo (sobre, projetos): traço que desce com a rolagem e acende cada marco */
+  $$('.linha').forEach(ol => {
+    const itens = $$('li', ol);
+    ol.classList.add('linha--viva');
+    const atualiza = () => {
+      let prog = 1;
+      if (!calmo) {
+        const r = ol.getBoundingClientRect();
+        const alvo = innerHeight * .62;
+        prog = Math.min(Math.max((alvo - r.top) / Math.max(r.height, 1), 0), 1);
+      }
+      ol.style.setProperty('--prog', prog.toFixed(3));
+      itens.forEach(li => {
+        const topoItem = li.offsetTop / Math.max(ol.offsetHeight, 1);
+        li.classList.toggle('is-ativo', prog >= topoItem + .01 || prog === 1);
+      });
     };
     addEventListener('scroll', atualiza, { passive: true });
     addEventListener('resize', atualiza);
