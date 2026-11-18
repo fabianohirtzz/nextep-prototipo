@@ -853,3 +853,4 @@ body { padding-top: 80px; }
 /* wordmark do rodapé: no tamanho nativo da imagem, sem estourar */
 .rodape__gigante img { width: min(560px, 100%); opacity: .08; }
 .case:has(.case__video) h2 { text-wrap: balance; }
+.rodape__tit { color: var(--laranja); }
