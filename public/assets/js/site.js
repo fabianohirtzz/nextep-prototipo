@@ -495,5 +495,22 @@
       t = setTimeout(() => { if (Math.abs(host.clientWidth - largura) < 2 && Math.abs(host.clientHeight - H) < 2) return; largura = host.clientWidth; monta(); desenha(); }, 150);
     }).observe(host);
   });
+  /* mosaico de serviços: pílulas sempre em uma linha, mesmo tamanho em todos os cards */
+  $$('[data-bento]').forEach(bento => {
+    const listas = $$('.pilulas', bento);
+    const ajusta = () => {
+      let fs = 13;
+      bento.style.setProperty('--pil', fs + 'px');
+      while (fs > 9 && listas.some(l => l.scrollWidth > l.clientWidth + .5)) {
+        fs -= .25;
+        bento.style.setProperty('--pil', fs + 'px');
+      }
+    };
+    let espera;
+    addEventListener('resize', () => { clearTimeout(espera); espera = setTimeout(ajusta, 120); });
+    (document.fonts ? document.fonts.ready : Promise.resolve()).then(ajusta);
+    ajusta();
+  });
+
   cuidaTopo();
 })();

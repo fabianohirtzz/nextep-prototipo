@@ -854,3 +854,35 @@ body { padding-top: 80px; }
 .rodape__gigante img { width: min(560px, 100%); opacity: .08; }
 .case:has(.case__video) h2 { text-wrap: balance; }
 .rodape__tit { color: var(--laranja); }
+
+/* ===== v5: serviços da home em mosaico (cabe numa tela) ===== */
+.sec--servicos { padding-block: clamp(40px, 4vw, 52px); }
+.sec--servicos .cab { margin-bottom: clamp(24px, 2.4vw, 32px); }
+.bento { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(240px, auto)); gap: 14px; }
+.bento__card { position: relative; isolation: isolate; overflow: hidden; display: flex; flex-direction: column; gap: 10px; padding: 22px 16px 20px; border-radius: var(--raio); background: var(--navy); color: var(--claro-sobre-navy); text-decoration: none; transition: transform .35s cubic-bezier(.2, .7, .2, 1), box-shadow .35s; }
+.bento__card:hover { transform: translateY(-3px); box-shadow: var(--sombra); }
+.bento__card h3 { color: #fff; font-size: 19px; line-height: 1.15; letter-spacing: -.01em; font-weight: 700; }
+.bento__card p { font-size: 14px; line-height: 1.45; }
+.bento__ic { width: 42px; height: 42px; border-radius: 10px; display: grid; place-items: center; background: rgba(255, 255, 255, .1); color: #FFB27A; }
+.bento__ic svg { width: 22px; height: 22px; }
+.bento__card--foto { grid-column: span 2; justify-content: flex-end; padding: 24px; color: #DCE3F3; background: var(--navy-deep); }
+.bento__card--foto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; transition: transform .8s cubic-bezier(.2, .7, .2, 1); }
+.bento__card--foto::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(11, 22, 54, .92) 0%, rgba(11, 22, 54, .55) 55%, rgba(11, 22, 54, .1) 100%); }
+.bento__card--foto h3 { font-size: 24px; }
+.bento__card--foto p { max-width: 40ch; }
+.bento__card--foto:hover { transform: none; }
+.bento__card--foto:hover img { transform: scale(1.04); }
+.pilulas { margin-top: auto; display: flex; flex-wrap: nowrap; gap: 4px; min-width: 0; }
+.bento__card--foto .pilulas { margin-top: 6px; }
+.pilulas li { flex: none; display: inline-flex; align-items: center; gap: .35em; white-space: nowrap; font-size: var(--pil, 12px); font-weight: 600; letter-spacing: -.005em; color: #fff; background: var(--laranja-btn); border-radius: 999px; padding: .4em .7em .4em .5em; }
+.pilulas svg { width: 1.15em; height: 1.15em; flex: none; stroke-width: 2; }
+@media (max-width: 1000px) {
+  .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: none; }
+}
+@media (max-width: 600px) {
+  .bento { grid-template-columns: minmax(0, 1fr); }
+  .bento__card--foto { grid-column: auto; min-height: 280px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bento__card, .bento__card--foto img { transition: none; }
+}

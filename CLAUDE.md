@@ -82,6 +82,10 @@ Links internos sem `.html` (pedido do Fabiano): `sobre`, `contato#consultoria`, 
   acumulados (o sticky encolhendo fazia o menu pular); case da home sem a citação do Pedro (fica em Projetos),
   título equilibrado em 3 linhas, números em 4 colunas; `.linha` (Sobre e Projetos) vira `.linha--viva` com traço
   preenchido pela rolagem; wordmark do rodapé em até 560 px.
+- 2026-11-18, v5: serviços da home em mosaico `.bento[data-bento]` (escolha do Fabiano, opção "C1": Gestão e
+  Infraestrutura em card largo com foto, os outros 4 compactos em navy com ícone; tags em pílulas laranja com ícone,
+  sempre em uma linha, tamanho ajustado por JS ao card mais apertado). Seção cabe numa tela (padding reduzido).
+  Tags encurtadas: Presencial, Redundância, Filiais. Faixa de marcas movida para depois do case Juntapel.
 - Pesquisa de clientes (legendas do IG em 2026-11-18): Kern (Ivoti, cliente há 5+ anos), Flesch (Gravataí?),
   Ideal fica em Florianópolis/SC (não RS, 5 lojas), Deltaville abriu loja em Biguaçu/SC, Kawa Bar e Tapas y Besos
   (Cais Embarcadero, POA). Sem site oficial com logo para Kern, Flesch, Ideal, Tapas; Industrial bloqueia (Cloudflare).
