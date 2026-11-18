@@ -18,9 +18,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/site.css?v=1794961747">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Nextep Soluções em TI","url":"https://nextepsolucoes.com.br/","telephone":"+55 51 3103-9943","email":"comercial@nextepsolucoes.com.br","foundingDate":"2011-11-11","address":{"@type":"PostalAddress","streetAddress":"Av. Saturnino de Brito, 30, Sala 401","addressLocality":"Porto Alegre","addressRegion":"RS","addressCountry":"BR"},"sameAs":["https://www.instagram.com/nextepsolucoes/","https://www.linkedin.com/company/nextepsolucoes/"]}</script>
-<script src="assets/js/site.js" defer></script>
+<script src="assets/js/site.js?v=1794961747" defer></script>
 
 </head>
 <body data-page="projetos">
@@ -31,15 +31,23 @@
       <img src="assets/img/logo/logo-navy.png" alt="Nextep Soluções em TI" width="160" height="74">
     </a>
     <nav class="menu" id="menu" aria-label="Principal">
-      <ul>
+      <ul class="menu__lista" data-menu-lista>
         <li><a href="solucoes.html">Soluções</a></li>
         <li><a href="projetos.html" aria-current="page">Projetos</a></li>
         <li><a href="sobre.html">Sobre</a></li>
         <li><a href="contato.html">Contato</a></li>
+        <li class="menu__pilula" aria-hidden="true"></li>
       </ul>
       <div class="menu__acoes">
-        <a class="menu__cliente" href="https://nextep.suport.cloud/" target="_blank" rel="noopener">Área do cliente</a>
+        <a class="menu__cliente" href="https://nextep.suport.cloud/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 13a8 8 0 0116 0v4a2 2 0 01-2 2h-2v-6h4M4 13v4a2 2 0 002 2h2v-6H4" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          Área do cliente
+        </a>
         <a class="btn btn--laranja" href="contato.html#consultoria">Agendar consultoria</a>
+      </div>
+      <div class="menu__rodape">
+        <a href="tel:+555131039943">(51) 3103-9943</a>
+        <a href="mailto:comercial@nextepsolucoes.com.br">comercial@nextepsolucoes.com.br</a>
       </div>
     </nav>
     <button class="topo__burger" type="button" aria-expanded="false" aria-controls="menu" data-burger>
@@ -49,18 +57,25 @@
 </header>
 
 <main id="conteudo">
-<section class="pagetopo">
-  <div class="wrap">
-    <div class="pagetopo__in">
-      <nav class="trilha" aria-label="Você está em"><a href="index.html">Início</a><span aria-hidden="true">/</span><span>Projetos</span></nav>
+<section class="hero hero--interno">
+  <div class="wrap hero__grid">
+    <div class="hero__texto">
+      <p class="hero__selo"><b>+100</b> projetos executados desde 2011</p>
       <h1 class="t-xl">Obras, lojas e salas técnicas entregues funcionando.</h1>
-      <p class="lead">Mais de 100 projetos executados entre sedes novas, supermercados, reformas e reestruturações. Alguns deles, contados por quem estava lá.</p>
+      <p class="lead">Sedes novas, supermercados, reformas e reestruturações. Alguns deles contados por quem estava lá.</p>
+      <div class="acoes"><a class="btn btn--laranja" href="#juntapel">Ver o case Juntapel</a><a class="btn btn--linha" href="#galeria">Ver a galeria</a></div>
     </div>
-    <div class="faixa-fotos">
-      <img src="assets/img/ig/infra-022.webp" alt="Rack com patch panels da sede da Juntapel" width="1080" height="1161">
-      <img src="assets/img/ig/campo-040.webp" alt="Técnico medindo a parede para instalação" width="1080" height="1161">
-      <img src="assets/img/ig/campo-260.webp" alt="Instalação de access point no forro" width="1080" height="1161">
-      <img src="assets/img/ig/varejo-277.webp" alt="Supermercado inaugurado" width="1080" height="1161">
+    <div class="mural mural--duas" aria-label="Fotos da Nextep">
+      <div class="mural__col">
+        <img src="assets/img/ig/infra-022.webp" alt="Rack com patch panels da sede da Juntapel" width="1080" height="1161">
+        <img src="assets/img/ig/campo-260.webp" alt="Instalação de access point no forro" width="1080" height="1161">
+        <img src="assets/img/ig/varejo-277.webp" alt="Supermercado inaugurado" width="1080" height="1161">
+      </div>
+      <div class="mural__col">
+        <img src="assets/img/ig/campo-040.webp" alt="Técnico medindo a parede para instalação" width="1080" height="1161">
+        <img src="assets/img/ig/infra-148.webp" alt="Rack de piso montado" width="1080" height="1161">
+        <img src="assets/img/ig/campo-048.webp" alt="Equipe em visita a obra" width="1080" height="1161">
+      </div>
     </div>
   </div>
 </section>
@@ -101,14 +116,14 @@
           <figcaption>
             <span><b>Pedro</b>, Gerente Comercial da Juntapel</span>
             <button class="btn-play" type="button" data-reel="Df0EhBzBWkr">
-              <i><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M8 5v14l11-7z" fill="#fff"/></svg></i>
+              <i><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></i>
               Assistir ao depoimento
             </button>
           </figcaption>
         </figure>
         <div class="acoes">
-          <button class="btn-play" type="button" data-reel="DfCj1MDJpsc"><i><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M8 5v14l11-7z" fill="#fff"/></svg></i>Vídeo da obra</button>
-          <button class="btn-play" type="button" data-reel="DfqFC5FpESv"><i><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M8 5v14l11-7z" fill="#fff"/></svg></i>Da indicação ao contrato</button>
+          <button class="btn-play" type="button" data-reel="DfCj1MDJpsc"><i><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></i>Vídeo da obra</button>
+          <button class="btn-play" type="button" data-reel="DfqFC5FpESv"><i><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></i>Da indicação ao contrato</button>
         </div>
       </div>
     </div>
@@ -127,28 +142,28 @@
         <p class="projeto__local">Canoas, RS</p>
         <h3>Supermercado completo, do rack à inauguração</h3>
         <p>Com a Sintonia Fina, a Nextep ficou com toda a TI, o som e as câmeras da loja. Rack montado do zero e sistema rodando no dia da abertura.</p>
-        <button class="btn-play" type="button" data-reel="DW65IeGpGh-"><i><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M8 5v14l11-7z" fill="#fff"/></svg></i>Ver vídeo</button>
+        <button class="btn-play" type="button" data-reel="DW65IeGpGh-"><i><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></i>Ver vídeo</button>
       </article>
       <article class="projeto">
         <div class="projeto__foto"><img src="assets/img/ig/campo-263.webp" alt="Prédio da nova loja em construção" loading="lazy" width="1080" height="1161"></div>
         <p class="projeto__local">Mudança de loja</p>
         <h3>Uma loja inteira trocando de endereço</h3>
         <p>Cabeamento, rede e servidores de um supermercado completo saindo do zero, com planejamento para a operação não parar.</p>
-        <button class="btn-play" type="button" data-reel="DWjt-ZaJebS"><i><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M8 5v14l11-7z" fill="#fff"/></svg></i>Ver vídeo</button>
+        <button class="btn-play" type="button" data-reel="DWjt-ZaJebS"><i><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></i>Ver vídeo</button>
       </article>
       <article class="projeto">
         <div class="projeto__foto"><img src="assets/img/ig/infra-087.webp" alt="Rack completo com switches, links e firewall" loading="lazy" width="1080" height="1161"></div>
         <p class="projeto__local">Biguaçu, SC</p>
         <h3>O coração da infraestrutura de um cliente</h3>
         <p>Rack completo com switches, links de internet e firewall, tudo organizado e acompanhado pela Nextep em Santa Catarina.</p>
-        <button class="btn-play" type="button" data-reel="DYpZid6p599"><i><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M8 5v14l11-7z" fill="#fff"/></svg></i>Ver vídeo</button>
+        <button class="btn-play" type="button" data-reel="DYpZid6p599"><i><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></i>Ver vídeo</button>
       </article>
       <article class="projeto">
         <div class="projeto__foto"><img src="assets/img/ig/infra-064.webp" alt="Rack reestruturado" loading="lazy" width="1080" height="1161"></div>
         <p class="projeto__local">Ambiente corporativo</p>
         <h3>Reestruturação de rack</h3>
         <p>Toda a infraestrutura reorganizada para reduzir riscos, aproveitar melhor os recursos e facilitar a gestão do ambiente.</p>
-        <button class="btn-play" type="button" data-reel="DO_a1DNjdaK"><i><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M8 5v14l11-7z" fill="#fff"/></svg></i>Ver vídeo</button>
+        <button class="btn-play" type="button" data-reel="DO_a1DNjdaK"><i><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></i>Ver vídeo</button>
       </article>
       <article class="projeto">
         <div class="projeto__foto"><img src="assets/img/ig/campo-260.webp" alt="Instalação de rede em unidade comercial" loading="lazy" width="1080" height="1161"></div>
@@ -161,7 +176,7 @@
         <p class="projeto__local">Varejo</p>
         <h3>Inaugurações de supermercados</h3>
         <p>Unisuper, Super Ideal, Super Wollmann e outras lojas que abriram as portas com TI, câmeras e caixas prontos para vender.</p>
-        <button class="btn-play" type="button" data-reel="DXKWdf0pe6Q"><i><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M8 5v14l11-7z" fill="#fff"/></svg></i>Ver vídeo</button>
+        <button class="btn-play" type="button" data-reel="DXKWdf0pe6Q"><i><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></i>Ver vídeo</button>
       </article>
     </div>
   </div>
@@ -271,26 +286,35 @@
   </div>
 </section>
 
-<section class="sec sec--navy">
-  <div class="wrap">
-    <div class="cab cab--lado">
+<section class="sec insta">
+  <div class="wrap insta__grid">
+    <div class="insta__perfil">
+      <a class="insta__conta" href="https://www.instagram.com/nextepsolucoes/" target="_blank" rel="noopener">
+        <span class="insta__avatar"><img src="assets/img/logo/favicon.png" alt="" width="56" height="56"></span>
+        <span><b>@nextepsolucoes</b>Nextep Soluções em TI</span>
+      </a>
       <h2 class="t-l">Os projetos em vídeo</h2>
-      <div class="reels-nav" data-reels-nav="reels-projetos">
-        <button type="button" data-dir="ant" aria-label="Vídeos anteriores"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
-        <button type="button" data-dir="prox" aria-label="Próximos vídeos"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+      <p class="lead">Do estudo na planta ao dia da inauguração, registrado pela equipe em campo.</p>
+      <ul class="insta__nums"><li><b>524</b> publicações</li><li><b>1.273</b> seguidores</li></ul>
+      <div class="insta__acoes">
+        <a class="btn btn--navy" href="https://www.instagram.com/nextepsolucoes/" target="_blank" rel="noopener">Seguir no Instagram</a>
+        <div class="reels-nav" data-reels-nav="reels-projetos">
+          <button type="button" data-dir="ant" aria-label="Vídeos anteriores"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+          <button type="button" data-dir="prox" aria-label="Próximos vídeos"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+        </div>
       </div>
     </div>
-    <div class="reels" id="reels-projetos">
-      <button class="reel" type="button" data-reel="Df0EhBzBWkr"><span class="reel__capa"><img src="assets/img/reels/Df0EhBzBWkr.webp" alt="" loading="lazy" width="720" height="1280"><i class="reel__play"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M8 5v14l11-7z" fill="#fff"/></svg></i></span><span class="reel__txt"><b>Quem responde é o cliente</b>Pedro, da Juntapel, conta como é terceirizar a TI.</span></button>
-      <button class="reel" type="button" data-reel="DfCj1MDJpsc"><span class="reel__capa"><img src="assets/img/reels/DfCj1MDJpsc.webp" alt="" loading="lazy" width="720" height="1280"><i class="reel__play"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M8 5v14l11-7z" fill="#fff"/></svg></i></span><span class="reel__txt"><b>Do projeto à inauguração</b>Dez meses de obra da nova sede da Juntapel.</span></button>
-      <button class="reel" type="button" data-reel="DfqFC5FpESv"><span class="reel__capa"><img src="assets/img/reels/DfqFC5FpESv.webp" alt="" loading="lazy" width="720" height="1280"><i class="reel__play"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M8 5v14l11-7z" fill="#fff"/></svg></i></span><span class="reel__txt"><b>Da indicação ao contrato</b>Como a parceria com a Montele chegou à Juntapel.</span></button>
-      <button class="reel" type="button" data-reel="DW65IeGpGh-"><span class="reel__capa"><img src="assets/img/reels/DW65IeGpGh-.webp" alt="" loading="lazy" width="720" height="1280"><i class="reel__play"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M8 5v14l11-7z" fill="#fff"/></svg></i></span><span class="reel__txt"><b>Transformação completa</b>TI, som e câmeras de um supermercado em Canoas.</span></button>
-      <button class="reel" type="button" data-reel="DWjt-ZaJebS"><span class="reel__capa"><img src="assets/img/reels/DWjt-ZaJebS.webp" alt="" loading="lazy" width="720" height="1280"><i class="reel__play"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M8 5v14l11-7z" fill="#fff"/></svg></i></span><span class="reel__txt"><b>Uma loja inteira de lugar</b>Cabeamento, rede e servidores saindo do zero.</span></button>
-      <button class="reel" type="button" data-reel="DXKWdf0pe6Q"><span class="reel__capa"><img src="assets/img/reels/DXKWdf0pe6Q.webp" alt="" loading="lazy" width="720" height="1280"><i class="reel__play"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M8 5v14l11-7z" fill="#fff"/></svg></i></span><span class="reel__txt"><b>TI para supermercados</b>Redes, CFTV, som e frente de caixa.</span></button>
-      <button class="reel" type="button" data-reel="DYpZid6p599"><span class="reel__capa"><img src="assets/img/reels/DYpZid6p599.webp" alt="" loading="lazy" width="720" height="1280"><i class="reel__play"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M8 5v14l11-7z" fill="#fff"/></svg></i></span><span class="reel__txt"><b>Visita técnica em Biguaçu</b>O coração da infraestrutura de um cliente em SC.</span></button>
-      <button class="reel" type="button" data-reel="DO_a1DNjdaK"><span class="reel__capa"><img src="assets/img/reels/DO_a1DNjdaK.webp" alt="" loading="lazy" width="720" height="1280"><i class="reel__play"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M8 5v14l11-7z" fill="#fff"/></svg></i></span><span class="reel__txt"><b>Reestruturação de rack</b>Mais segurança e continuidade para o cliente.</span></button>
-      <button class="reel" type="button" data-reel="DfmwL0EpU2J"><span class="reel__capa"><img src="assets/img/reels/DfmwL0EpU2J.webp" alt="" loading="lazy" width="720" height="1280"><i class="reel__play"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M8 5v14l11-7z" fill="#fff"/></svg></i></span><span class="reel__txt"><b>15 anos de Nextep</b>11/11/2011, o dia em que tudo começou.</span></button>
-      <button class="reel" type="button" data-reel="DfSIqmvBoqI"><span class="reel__capa"><img src="assets/img/reels/DfSIqmvBoqI.webp" alt="" loading="lazy" width="720" height="1280"><i class="reel__play"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M8 5v14l11-7z" fill="#fff"/></svg></i></span><span class="reel__txt"><b>O time alinhado</b>A reunião semanal da liderança da Nextep.</span></button>
+    <div class="reels" id="reels-projetos" data-arrasta>
+      <button class="reel" type="button" data-reel="Df0EhBzBWkr" aria-label="Assistir: Quem responde é o cliente"><span class="reel__capa"><img src="assets/img/reels/Df0EhBzBWkr.webp" alt="" loading="lazy" width="720" height="1280" draggable="false"><span class="reel__ig"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor"/></svg>Reel</span><span class="reel__play"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span></span><span class="reel__txt"><b>Quem responde é o cliente</b>Pedro, da Juntapel, conta como é terceirizar a TI.</span></button>
+      <button class="reel" type="button" data-reel="DfCj1MDJpsc" aria-label="Assistir: Do projeto à inauguração"><span class="reel__capa"><img src="assets/img/reels/DfCj1MDJpsc.webp" alt="" loading="lazy" width="720" height="1280" draggable="false"><span class="reel__ig"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor"/></svg>Reel</span><span class="reel__play"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span></span><span class="reel__txt"><b>Do projeto à inauguração</b>Dez meses de obra da nova sede da Juntapel.</span></button>
+      <button class="reel" type="button" data-reel="DfqFC5FpESv" aria-label="Assistir: Da indicação ao contrato"><span class="reel__capa"><img src="assets/img/reels/DfqFC5FpESv.webp" alt="" loading="lazy" width="720" height="1280" draggable="false"><span class="reel__ig"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor"/></svg>Reel</span><span class="reel__play"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span></span><span class="reel__txt"><b>Da indicação ao contrato</b>Como a parceria com a Montele chegou à Juntapel.</span></button>
+      <button class="reel" type="button" data-reel="DW65IeGpGh-" aria-label="Assistir: Transformação completa"><span class="reel__capa"><img src="assets/img/reels/DW65IeGpGh-.webp" alt="" loading="lazy" width="720" height="1280" draggable="false"><span class="reel__ig"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor"/></svg>Reel</span><span class="reel__play"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span></span><span class="reel__txt"><b>Transformação completa</b>TI, som e câmeras de um supermercado em Canoas.</span></button>
+      <button class="reel" type="button" data-reel="DWjt-ZaJebS" aria-label="Assistir: Uma loja inteira de lugar"><span class="reel__capa"><img src="assets/img/reels/DWjt-ZaJebS.webp" alt="" loading="lazy" width="720" height="1280" draggable="false"><span class="reel__ig"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor"/></svg>Reel</span><span class="reel__play"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span></span><span class="reel__txt"><b>Uma loja inteira de lugar</b>Cabeamento, rede e servidores saindo do zero.</span></button>
+      <button class="reel" type="button" data-reel="DXKWdf0pe6Q" aria-label="Assistir: TI para supermercados"><span class="reel__capa"><img src="assets/img/reels/DXKWdf0pe6Q.webp" alt="" loading="lazy" width="720" height="1280" draggable="false"><span class="reel__ig"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor"/></svg>Reel</span><span class="reel__play"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span></span><span class="reel__txt"><b>TI para supermercados</b>Redes, CFTV, som e frente de caixa.</span></button>
+      <button class="reel" type="button" data-reel="DYpZid6p599" aria-label="Assistir: Visita técnica em Biguaçu"><span class="reel__capa"><img src="assets/img/reels/DYpZid6p599.webp" alt="" loading="lazy" width="720" height="1280" draggable="false"><span class="reel__ig"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor"/></svg>Reel</span><span class="reel__play"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span></span><span class="reel__txt"><b>Visita técnica em Biguaçu</b>O coração da infraestrutura de um cliente em SC.</span></button>
+      <button class="reel" type="button" data-reel="DO_a1DNjdaK" aria-label="Assistir: Reestruturação de rack"><span class="reel__capa"><img src="assets/img/reels/DO_a1DNjdaK.webp" alt="" loading="lazy" width="720" height="1280" draggable="false"><span class="reel__ig"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor"/></svg>Reel</span><span class="reel__play"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span></span><span class="reel__txt"><b>Reestruturação de rack</b>Mais segurança e continuidade para o cliente.</span></button>
+      <button class="reel" type="button" data-reel="DfmwL0EpU2J" aria-label="Assistir: 15 anos de Nextep"><span class="reel__capa"><img src="assets/img/reels/DfmwL0EpU2J.webp" alt="" loading="lazy" width="720" height="1280" draggable="false"><span class="reel__ig"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor"/></svg>Reel</span><span class="reel__play"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span></span><span class="reel__txt"><b>15 anos de Nextep</b>11/11/2011, o dia em que tudo começou.</span></button>
+      <button class="reel" type="button" data-reel="DfSIqmvBoqI" aria-label="Assistir: O time alinhado"><span class="reel__capa"><img src="assets/img/reels/DfSIqmvBoqI.webp" alt="" loading="lazy" width="720" height="1280" draggable="false"><span class="reel__ig"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor"/></svg>Reel</span><span class="reel__play"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span></span><span class="reel__txt"><b>O time alinhado</b>A reunião semanal da liderança da Nextep.</span></button>
     </div>
   </div>
 </section>
@@ -310,44 +334,66 @@
 </section>
 
 </main>
-<footer class="rodape">
-  <div class="wrap rodape__grid">
-    <div class="rodape__marca">
-      <img src="assets/img/logo/logo-branco.png" alt="Nextep Soluções em TI" width="150" height="70" loading="lazy">
-      <p>Infraestrutura, suporte e gestão de TI para empresas que não podem parar. Desde 2011, em Porto Alegre.</p>
+<footer class="rodape" data-rodape>
+  <div class="wrap">
+    <div class="rodape__cta">
+      <h2 class="rodape__frase">Sua TI no lugar.<br><span>Você cuidando do negócio.</span></h2>
+      <div class="rodape__cta-acoes">
+        <a class="btn btn--laranja" href="contato.html#consultoria">Agendar consultoria gratuita</a>
+        <a class="btn btn--linha-clara" href="tel:+555131039943">(51) 3103-9943</a>
+      </div>
     </div>
-    <div>
-      <h2 class="rodape__tit">Navegue</h2>
-      <ul>
-        <li><a href="solucoes.html">Soluções</a></li>
-        <li><a href="solucoes.html#varejo">TI para supermercados</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
-        <li><a href="sobre.html">Sobre a Nextep</a></li>
-        <li><a href="contato.html">Contato</a></li>
-      </ul>
-    </div>
-    <div>
-      <h2 class="rodape__tit">Fale com a gente</h2>
-      <ul>
-        <li><a href="tel:+555131039943">(51) 3103-9943</a></li>
-        <li><a href="mailto:comercial@nextepsolucoes.com.br">comercial@nextepsolucoes.com.br</a></li>
-        <li>Av. Saturnino de Brito, 30, Sala 401<br>Porto Alegre, RS</li>
-      </ul>
-    </div>
-    <div>
-      <h2 class="rodape__tit">Já é cliente?</h2>
-      <p>Abra e acompanhe seus chamados pela área do cliente.</p>
-      <a class="btn btn--linha-clara" href="https://nextep.suport.cloud/" target="_blank" rel="noopener">Abrir chamado</a>
-      <ul class="rodape__redes">
-        <li><a href="https://www.instagram.com/nextepsolucoes/" target="_blank" rel="noopener">Instagram</a></li>
-        <li><a href="https://www.linkedin.com/company/nextepsolucoes/" target="_blank" rel="noopener">LinkedIn</a></li>
-      </ul>
+
+    <div class="rodape__grid">
+      <div class="rodape__marca">
+        <img src="assets/img/logo/logo-branco.png" alt="Nextep Soluções em TI" width="150" height="70" loading="lazy">
+        <p>Infraestrutura, suporte e gestão de TI para empresas que não podem parar. Desde 2011, em Porto Alegre.</p>
+        <ul class="rodape__redes" aria-label="Redes sociais">
+          <li><a href="https://www.instagram.com/nextepsolucoes/" target="_blank" rel="noopener" aria-label="Instagram da Nextep">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor"/></svg>
+          </a></li>
+          <li><a href="https://www.linkedin.com/company/nextepsolucoes/" target="_blank" rel="noopener" aria-label="LinkedIn da Nextep">
+            <svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+          </a></li>
+          <li><a href="mailto:comercial@nextepsolucoes.com.br" aria-label="E-mail comercial da Nextep">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 7l9 6 9-6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          </a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="rodape__tit">Navegue</h2>
+        <ul class="rodape__links">
+          <li><a href="solucoes.html">Soluções</a></li>
+          <li><a href="solucoes.html#varejo">TI para supermercados</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="sobre.html">Sobre a Nextep</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="rodape__tit">Fale com a gente</h2>
+        <ul class="rodape__links">
+          <li><a href="tel:+555131039943">(51) 3103-9943</a></li>
+          <li><a href="mailto:comercial@nextepsolucoes.com.br">comercial@nextepsolucoes.com.br</a></li>
+          <li>Av. Saturnino de Brito, 30, Sala 401<br>Porto Alegre, RS</li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="rodape__tit">Já é cliente?</h2>
+        <p>Abra e acompanhe seus chamados pela área do cliente.</p>
+        <a class="btn btn--linha-clara" href="https://nextep.suport.cloud/" target="_blank" rel="noopener">Abrir chamado</a>
+      </div>
     </div>
   </div>
+
   <div class="wrap rodape__base">
-    <p>Nextep Soluções em TI, 2011 a 2026.</p>
-    <p>Protótipo de proposta. Não indexado.</p>
+    <p>Nextep Soluções em TI, desde 2011. Protótipo de proposta, não indexado.</p>
+    <a class="rodape__assina" href="https://www.freelainhome.com.br/" target="_blank" rel="noopener">
+      <span>Site por</span>
+      <img src="assets/img/logo/freela-in-home.png" alt="Freela In Home" width="196" height="24" loading="lazy">
+    </a>
   </div>
+  <div class="rodape__gigante" aria-hidden="true"><img src="assets/img/logo/wordmark-branco.png" alt="" width="640" height="197" loading="lazy"></div>
 </footer>
 
 <div class="reelbox" data-reelbox hidden>

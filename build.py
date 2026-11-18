@@ -9,15 +9,20 @@ active: home
 """
 import pathlib
 import re
+import time
 
 ROOT = pathlib.Path(__file__).parent
 SRC = ROOT / "src"
 OUT = ROOT / "public"
 PARTIALS = {p.stem: p.read_text(encoding="utf-8") for p in (SRC / "partials").glob("*.html")}
+VERSAO = str(int(time.time()))
 MENU = ["solucoes", "projetos", "sobre", "contato"]
 
 
-PLAY = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M8 5v14l11-7z" fill="#fff"/></svg>'
+PLAY = '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>'
+IG = ('<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" '
+      'fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" '
+      'stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor"/></svg>')
 REELS = [
     ("Df0EhBzBWkr", "Quem responde é o cliente", "Pedro, da Juntapel, conta como é terceirizar a TI."),
     ("DfCj1MDJpsc", "Do projeto à inauguração", "Dez meses de obra da nova sede da Juntapel."),
@@ -44,9 +49,10 @@ def reels_html(codes=None) -> str:
         if codes and code not in codes:
             continue
         out.append(
-            f'<button class="reel" type="button" data-reel="{code}"><span class="reel__capa">'
-            f'<img src="assets/img/reels/{code}.webp" alt="" loading="lazy" width="720" height="1280">'
-            f'<i class="reel__play">{PLAY}</i></span><span class="reel__txt"><b>{tit}</b>{txt}</span></button>'
+            f'<button class="reel" type="button" data-reel="{code}" aria-label="Assistir: {tit}"><span class="reel__capa">'
+            f'<img src="assets/img/reels/{code}.webp" alt="" loading="lazy" width="720" height="1280" draggable="false">'
+            f'<span class="reel__ig">{IG}Reel</span><span class="reel__play">{PLAY}</span></span>'
+            f'<span class="reel__txt"><b>{tit}</b>{txt}</span></button>'
         )
     return "\n      ".join(out)
 
@@ -89,6 +95,7 @@ def render(name: str) -> str:
         attr = ' aria-current="page"' if meta.get("active") == key else ""
         html = html.replace("{{cur:" + key + "}}", attr)
     html = html.replace("{{title}}", meta["title"]).replace("{{description}}", meta["description"])
+    html = html.replace("{{v}}", VERSAO)
     html = html.replace("{{page}}", meta.get("active", name))
     html = html.replace("{{path}}", "" if name == "index" else name + ".html")
     return html

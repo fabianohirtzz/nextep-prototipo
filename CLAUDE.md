@@ -59,6 +59,15 @@ pt-BR, sem travessões, sem emojis, números concretos, botões dizem a ação.
 - 2026-11-17: publicado. Repo público https://github.com/fabianohirtzz/nextep-prototipo , GitHub Pages via
   `.github/workflows/pages.yml` (publica `public/` a cada push na `main`).
   Site: https://fabianohirtzz.github.io/nextep-prototipo/ . Auditoria: .../auditoria.html
-- Próximo: Fabiano envia ao dono da Nextep; ajustes conforme retorno.
+- 2026-11-17, rodada v2 (pedido do Fabiano): menu com pílula deslizante e topo que encolhe e some ao descer
+  (mobile: cortina com links em cascata); botões com varredura de cor e texto que rola (só em hover);
+  hero da home dimensionada pela altura da tela; números com contagem e traço; logos reais de clientes
+  (`public/assets/img/clientes/`: Juntapel, Unisuper SVG, Wollmann, Deltaville, baixados dos sites oficiais);
+  processo com linha que preenche pela rolagem; seção Instagram com card de perfil e reels com play translúcido;
+  rodapé com frase grande, ícones sociais, wordmark e assinatura Freela In Home (`logo/freela-in-home.png`),
+  com efeito de revelar (`html.cortina`) só quando cabe na tela; heros de Sobre e Projetos no padrão da home;
+  trilhas "Início / ..." removidas. CSS v2 fica no fim de `site.css`. Build carimba `?v=` nos links de CSS/JS.
+- Logos que faltam (sem site ou download bloqueado): Supermercado Industrial (Canoas), Kern, Flesch, Super Ideal.
+- Próximo: Fabiano revisa a v2; depois envia ao dono da Nextep.
 - Auditoria: medições de 2026-11-17 (TTFB 2 a 5 s com pico de 78 s, HTML 613 KB, 15 imagens base64, 25 CSS + 17 JS, sem H1/description/OG).
 - 3CX dá erro de CORS em localhost; testar no domínio publicado (pode exigir liberar o domínio no 3CX).

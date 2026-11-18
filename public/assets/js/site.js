@@ -4,9 +4,6 @@
 
   /* topo: borda ao rolar */
   const topo = $('[data-topo]');
-  const marcaTopo = () => topo && topo.classList.toggle('is-rolado', scrollY > 8);
-  addEventListener('scroll', marcaTopo, { passive: true });
-  marcaTopo();
 
   /* menu mobile */
   const burger = $('[data-burger]');
@@ -156,4 +153,131 @@
     if (d.length > 7) v = `(${d.slice(0, 2)}) ${d.slice(2, d.length - 4)}-${d.slice(-4)}`;
     inp.value = v;
   }));
+
+  const calmo = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* topo: some ao descer, volta ao subir */
+  let ultimoY = scrollY;
+  const cuidaTopo = () => {
+    if (!topo) return;
+    const y = scrollY;
+    topo.classList.toggle('is-rolado', y > 8);
+    const menuAberto = document.body.classList.contains('is-travado');
+    if (!menuAberto && !calmo) topo.classList.toggle('is-escondido', y > 320 && y > ultimoY + 4);
+    if (y < ultimoY - 4 || y < 320) topo.classList.remove('is-escondido');
+    ultimoY = y;
+  };
+  addEventListener('scroll', cuidaTopo, { passive: true });
+  topo?.addEventListener('focusin', () => topo.classList.remove('is-escondido'));
+
+  /* pílula que desliza entre os links do menu */
+  const menuLista = $('[data-menu-lista]');
+  const pilula = $('.menu__pilula', menuLista || document);
+  if (menuLista && pilula) {
+    const atual = $('a[aria-current]', menuLista);
+    const moveA = a => {
+      if (!a) { menuLista.classList.remove('tem-pilula'); return; }
+      pilula.style.width = a.offsetWidth + 'px';
+      pilula.style.transform = `translateX(${a.offsetLeft}px)`;
+      menuLista.classList.add('tem-pilula');
+    };
+    $$('a', menuLista).forEach(a => {
+      a.addEventListener('mouseenter', () => moveA(a));
+      a.addEventListener('focus', () => moveA(a));
+    });
+    menuLista.addEventListener('mouseleave', () => moveA(atual));
+    addEventListener('resize', () => moveA(atual));
+    requestAnimationFrame(() => moveA(atual));
+  }
+
+  /* botões: texto duplicado para o efeito de rolar */
+  $$('.btn').forEach(b => {
+    if (b.children.length) return;
+    const t = b.textContent.trim();
+    b.textContent = '';
+    const fora = document.createElement('span');
+    fora.className = 'btn__rola';
+    const dentro = document.createElement('span');
+    dentro.dataset.t = t;
+    dentro.textContent = t;
+    fora.appendChild(dentro);
+    b.appendChild(fora);
+  });
+
+  /* números: contagem ao entrar na tela */
+  const numeros = $('[data-numeros]');
+  if (numeros) {
+    const conta = el => {
+      const fim = Number(el.dataset.conta);
+      if (calmo) { el.textContent = fim.toLocaleString('pt-BR'); return; }
+      const ini = performance.now(), dur = 1600 + Math.min(fim, 5000) / 10;
+      const passo = agora => {
+        const t = Math.min((agora - ini) / dur, 1);
+        const e = 1 - Math.pow(1 - t, 4);
+        el.textContent = Math.round(fim * e).toLocaleString('pt-BR');
+        if (t < 1) requestAnimationFrame(passo);
+      };
+      requestAnimationFrame(passo);
+    };
+    const nums = $$('[data-conta]', numeros);
+    if (!calmo) nums.forEach(n => { n.textContent = '0'; });
+    new IntersectionObserver((ents, obs) => {
+      if (!ents[0].isIntersecting) return;
+      numeros.classList.add('is-visivel');
+      nums.forEach(conta);
+      obs.disconnect();
+    }, { threshold: .4 }).observe(numeros);
+  }
+
+  /* processo: a linha se preenche com a rolagem e acende cada etapa */
+  $$('[data-passos]').forEach(wrap => {
+    const passos = $$('.passo', wrap);
+    const atualiza = () => {
+      let prog = 1;
+      if (!calmo) {
+        const r = wrap.getBoundingClientRect();
+        const vh = innerHeight;
+        const ini = vh * .8, fim = vh * .35;
+        const vertical = matchMedia('(max-width: 900px)').matches;
+        prog = vertical
+          ? (ini - r.top) / Math.max(r.height + ini - fim - vh * .2, 1)
+          : (ini - r.top) / (ini - fim);
+        prog = Math.min(Math.max(prog, 0), 1);
+      }
+      wrap.style.setProperty('--prog', prog.toFixed(3));
+      passos.forEach((p, i) => p.classList.toggle('is-ativo', prog >= (i / passos.length) + .02 || prog === 1));
+    };
+    addEventListener('scroll', atualiza, { passive: true });
+    addEventListener('resize', atualiza);
+    atualiza();
+  });
+
+  /* rodapé-cortina: só quando o rodapé cabe inteiro na tela */
+  const rodape = $('[data-rodape]');
+  const cortina = () => {
+    if (!rodape) return;
+    const cabe = innerWidth > 900 && rodape.offsetHeight < innerHeight - 40;
+    document.documentElement.classList.toggle('cortina', cabe && !calmo);
+  };
+  addEventListener('resize', cortina);
+  addEventListener('load', cortina);
+  cortina();
+
+  /* reels: arrastar com o mouse */
+  $$('[data-arrasta]').forEach(trilho => {
+    let x0 = 0, s0 = 0, ativo = false, moveu = false;
+    trilho.addEventListener('pointerdown', e => {
+      if (e.pointerType !== 'mouse') return;
+      ativo = true; moveu = false; x0 = e.clientX; s0 = trilho.scrollLeft;
+    });
+    addEventListener('pointermove', e => {
+      if (!ativo) return;
+      const dx = e.clientX - x0;
+      if (Math.abs(dx) > 5) { moveu = true; trilho.classList.add('is-arrastando'); }
+      if (moveu) trilho.scrollLeft = s0 - dx;
+    });
+    addEventListener('pointerup', () => { ativo = false; trilho.classList.remove('is-arrastando'); });
+    trilho.addEventListener('click', e => { if (moveu) { e.preventDefault(); e.stopImmediatePropagation(); moveu = false; } }, true);
+  });
+  cuidaTopo();
 })();
