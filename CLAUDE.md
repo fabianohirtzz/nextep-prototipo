@@ -101,6 +101,9 @@ Links internos sem `.html` (pedido do Fabiano): `sobre`, `contato#consultoria`, 
 - 2026-11-18, v9/v10: rodapé sem a frase "Sua TI no lugar" e sem os botões; ocupa a tela inteira (min-height 100svh,
   cortina segue ativa); wordmark grande acima da faixa de assinatura. Logos do rodapé vetorizados (vtracer por cor) em
   `public/assets/img/logo/logo-branco.svg` e `wordmark-branco.svg`.
+- 2026-11-19, v11 a v14: todo vídeo em caixa 9:16 (`object-fit: cover`; em tela cheia vira `contain`); rodapé com
+  altura exata da tela no desktop (wordmark encolhe); no mobile, logos de clientes em faixa contínua
+  (`.clientes__faixa`, clones `aria-hidden`, 24 s em loop, parada com reduced-motion) e assinatura em 2 linhas.
 - Pesquisa de clientes (legendas do IG em 2026-11-18): Kern (Ivoti, cliente há 5+ anos), Flesch (Gravataí?),
   Ideal fica em Florianópolis/SC (não RS, 5 lojas), Deltaville abriu loja em Biguaçu/SC, Kawa Bar e Tapas y Besos
   (Cais Embarcadero, POA). Sem site oficial com logo para Kern, Flesch, Ideal, Tapas; Industrial bloqueia (Cloudflare).
