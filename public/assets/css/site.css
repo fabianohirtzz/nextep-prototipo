@@ -962,3 +962,6 @@ body { padding-top: 80px; }
 @media (max-width: 600px) {
   .galv { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* v9: wordmark acima da faixa de assinatura (como na EreHost) */
+.rodape__gigante { padding-top: clamp(8px, 1.5vw, 20px); padding-bottom: clamp(24px, 3vw, 40px); }
