@@ -98,6 +98,9 @@ Links internos sem `.html` (pedido do Fabiano): `sobre`, `contato#consultoria`, 
   10 reels baixados do Drive do Fabiano (brutos em `_videos-raw/`, fora do git), recomprimidos em 540x960 H.264
   (`public/assets/video/<shortcode>.mp4`, 51 MB no total). Modal de reels e vídeo do case da home tocam o arquivo
   próprio, sem Instagram. Fotos do case em Projetos viraram galeria `[data-galv]` (player 9:16 + lista; opção "C").
+- 2026-11-18, v9/v10: rodapé sem a frase "Sua TI no lugar" e sem os botões; ocupa a tela inteira (min-height 100svh,
+  cortina segue ativa); wordmark grande acima da faixa de assinatura. Logos do rodapé vetorizados (vtracer por cor) em
+  `public/assets/img/logo/logo-branco.svg` e `wordmark-branco.svg`.
 - Pesquisa de clientes (legendas do IG em 2026-11-18): Kern (Ivoti, cliente há 5+ anos), Flesch (Gravataí?),
   Ideal fica em Florianópolis/SC (não RS, 5 lojas), Deltaville abriu loja em Biguaçu/SC, Kawa Bar e Tapas y Besos
   (Cais Embarcadero, POA). Sem site oficial com logo para Kern, Flesch, Ideal, Tapas; Industrial bloqueia (Cloudflare).

@@ -965,3 +965,15 @@ body { padding-top: 80px; }
 
 /* v9: wordmark acima da faixa de assinatura (como na EreHost) */
 .rodape__gigante { padding-top: clamp(8px, 1.5vw, 20px); padding-bottom: clamp(24px, 3vw, 40px); }
+
+/* ===== v10: rodapé sem a frase/CTA, ocupando a tela inteira; logos em SVG ===== */
+.rodape { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; padding-top: clamp(64px, 7vw, 104px); }
+.rodape > .wrap:first-of-type { flex: none; }
+.rodape__gigante { flex: 1; align-items: center; padding-top: clamp(16px, 3vw, 40px); padding-bottom: clamp(24px, 3vw, 48px); }
+.rodape__gigante img { width: min(860px, 100%); opacity: .09; }
+.rodape__marca img { width: 190px; height: auto; }
+
+/* ===== v11: caixas de vídeo sempre em 9:16, sem faixas laterais ===== */
+.video { width: min(100%, calc(min(82svh, 760px) * 9 / 16)); max-height: none; height: auto; aspect-ratio: 9 / 16; }
+.video > video, .reelbox__frame video, .galv__palco video, .galv.is-tocando .galv__palco video { object-fit: cover; }
+.reelbox__caixa { width: min(100%, calc((100svh - 110px) * 9 / 16), 440px); height: auto; aspect-ratio: 9 / 16; }

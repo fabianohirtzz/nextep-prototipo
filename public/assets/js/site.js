@@ -282,7 +282,7 @@
   const rodape = $('[data-rodape]');
   const cortina = () => {
     if (!rodape) return;
-    const cabe = innerWidth > 900 && rodape.offsetHeight < innerHeight - 40;
+    const cabe = innerWidth > 900 && rodape.offsetHeight <= innerHeight + 1;
     document.documentElement.classList.toggle('cortina', cabe && !calmo);
   };
   addEventListener('resize', cortina);
