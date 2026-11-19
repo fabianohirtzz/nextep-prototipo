@@ -93,6 +93,11 @@ Links internos sem `.html` (pedido do Fabiano): `sobre`, `contato#consultoria`, 
   (Suporte, Conectividade); título em 2 linhas (max-width 15em) com o subtítulo embaixo, também em 2 linhas.
   Números do case com ícones próprios (`.spec__ic`: tomada RJ45, patch panel, access point, racks em fibra).
   `.link-seta` (link sublinhado) saiu de todas as páginas: agora é `btn btn--linha`.
+- 2026-11-18, v8: case de Projetos com título em 2 linhas e subtítulo em 3 (quebras fixas `.linha-fixa`, só acima de
+  1000 px) e ícones nos números; CTAs de Soluções e Projetos centralizados (`.consultoria--centro`). Vídeos próprios:
+  10 reels baixados do Drive do Fabiano (brutos em `_videos-raw/`, fora do git), recomprimidos em 540x960 H.264
+  (`public/assets/video/<shortcode>.mp4`, 51 MB no total). Modal de reels e vídeo do case da home tocam o arquivo
+  próprio, sem Instagram. Fotos do case em Projetos viraram galeria `[data-galv]` (player 9:16 + lista; opção "C").
 - Pesquisa de clientes (legendas do IG em 2026-11-18): Kern (Ivoti, cliente há 5+ anos), Flesch (Gravataí?),
   Ideal fica em Florianópolis/SC (não RS, 5 lojas), Deltaville abriu loja em Biguaçu/SC, Kawa Bar e Tapas y Besos
   (Cais Embarcadero, POA). Sem site oficial com logo para Kern, Flesch, Ideal, Tapas; Industrial bloqueia (Cloudflare).

@@ -38,12 +38,12 @@
   const abrirModal = el => { ultimoFoco = document.activeElement; el.hidden = false; document.body.classList.add('is-travado'); $('button', el)?.focus(); };
   const fecharModal = el => { el.hidden = true; document.body.classList.remove('is-travado'); ultimoFoco?.focus(); };
 
-  /* reels: player oficial do Instagram em modal */
+  /* reels: vídeo próprio em modal */
   const reelbox = $('[data-reelbox]');
   const frame = $('[data-reel-frame]');
   $$('[data-reel]').forEach(b => b.addEventListener('click', () => {
     const code = b.dataset.reel;
-    frame.innerHTML = `<iframe src="https://www.instagram.com/reel/${code}/embed/" title="Vídeo da Nextep no Instagram" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>`;
+    frame.innerHTML = `<video src="assets/video/${code}.mp4" poster="assets/img/reels/${code}.webp" controls autoplay playsinline></video>`;
     abrirModal(reelbox);
   }));
   const fecharReel = () => { fecharModal(reelbox); frame.innerHTML = ''; };
@@ -357,9 +357,9 @@
   /* vídeo do case: troca a capa pelo player no lugar */
   $$('[data-video]').forEach(box => {
     $('button', box).addEventListener('click', () => {
-      box.innerHTML = `<iframe src="https://www.instagram.com/reel/${box.dataset.video}/embed/" title="Vídeo do projeto no Instagram" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+      box.innerHTML = `<video src="assets/video/${box.dataset.video}.mp4" poster="assets/img/reels/${box.dataset.video}.webp" controls autoplay playsinline></video>`;
       box.classList.add('is-tocando');
-      $('iframe', box).focus();
+      $('video', box).focus();
     });
   });
 
@@ -512,5 +512,28 @@
     ajusta();
   });
 
+
+  /* galeria de vídeos do case: um player, lista ao lado troca o vídeo */
+  $$('[data-galv]').forEach(g => {
+    const video = $('video', g), play = $('.galv__play', g), txt = $('[data-galv-txt]', g), itens = $$('[data-galv-item]', g);
+    const tocar = () => { video.controls = true; g.classList.add('is-tocando'); video.play(); };
+    const escolhe = (b, toca) => {
+      const code = b.dataset.galvItem;
+      itens.forEach(x => { x.classList.toggle('is-ativo', x === b); x.setAttribute('aria-pressed', x === b); });
+      if (!video.src.endsWith(code + '.mp4')) {
+        video.src = `assets/video/${code}.mp4`; video.poster = `assets/img/reels/${code}.webp`;
+        txt.innerHTML = `<b>${b.dataset.tit}</b>${b.dataset.sub}`; play.setAttribute('aria-label', 'Assistir: ' + b.dataset.tit);
+      }
+      if (toca || g.classList.contains('is-tocando')) tocar();
+    };
+    play.addEventListener('click', tocar);
+    itens.forEach(b => b.addEventListener('click', () => escolhe(b, true)));
+    $$('[data-galv-tocar]').forEach(b => b.addEventListener('click', () => {
+      const alvo = itens.find(x => x.dataset.galvItem === b.dataset.galvTocar);
+      if (!alvo) return;
+      escolhe(alvo, true);
+      g.scrollIntoView({ behavior: calmo ? 'auto' : 'smooth', block: 'center' });
+    }));
+  });
   cuidaTopo();
 })();
