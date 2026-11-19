@@ -1011,3 +1011,17 @@ video:-webkit-full-screen { object-fit: contain !important; background: #000; }
   .clientes__logos li { padding: 0 24px 0 0; }
   .clientes__logos .clientes__clone { display: none; }
 }
+
+/* ===== v15 (mobile): assinatura animada sem hover; texto dos clientes centralizado ===== */
+@media (hover: none) and (prefers-reduced-motion: no-preference) {
+  .assina.is-ligado b { background-size: 100% 1.5px; transition-delay: 1.4s; }
+  .assina.is-ligado .assina__pulso { opacity: 1; animation: assina-dados 1.6s linear 1.4s infinite; }
+  .assina.is-ligado .assina__led { animation: assina-led-toque 3.2s steps(1) 1.4s infinite; }
+}
+@keyframes assina-led-toque { 0%, 40% { fill: #2BC46B; } 45%, 55%, 65% { fill: var(--laranja); } 50%, 60%, 70%, 100% { fill: #2BC46B; } }
+@media (max-width: 640px) {
+  .clientes__in { align-items: center; }
+  .clientes__in > p { text-align: center; max-width: 30ch; margin: 0 auto; }
+}
+@media (max-width: 640px) { .assina b { width: fit-content; } }
+@media (max-width: 640px) { .assina { gap: 10px; } .assina__cabo { width: 88px; overflow: hidden; } }
